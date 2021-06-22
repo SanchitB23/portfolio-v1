@@ -29,6 +29,7 @@ const StyledLinkWrapper = styled.div`
     letter-spacing: 0.1rem;
     writing-mode: vertical-rl;
     color: var(--light-slate);
+    text-decoration: none;
     &:hover,
     &:focus {
       color: var(--orange);
