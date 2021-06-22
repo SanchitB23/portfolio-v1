@@ -30,12 +30,20 @@ const StyledSocial = styled.ul`
 
     :last-child a svg {
       height: 3rem;
-      fill: var(--orange);
       stroke: transparent;
+      fill: var(--light-slate);
     }
 
     :hover {
       transform: translateY(-3px);
+
+      a svg {
+        stroke: var(--orange);
+      }
+
+      :last-child a svg {
+        fill: var(--orange);
+      }
     }
 
     a {
@@ -43,9 +51,9 @@ const StyledSocial = styled.ul`
       margin-bottom: 2rem;
 
       svg {
-        height: 2.5rem;
-        width: 2.5rem;
-        stroke: var(--orange);
+        height: 2rem;
+        width: 2rem;
+        stroke: var(--light-slate);
       }
     }
   }

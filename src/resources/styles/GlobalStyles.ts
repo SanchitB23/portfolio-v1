@@ -26,6 +26,8 @@ export default createGlobalStyle`
     background-color: var(--navy);
     box-sizing: border-box;
     color: var(--white);
-
+    font-weight: 300;
+    font-size: 2rem;
+    font-family: var(--font-sans);
   }
 `

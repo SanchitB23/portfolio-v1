@@ -19,21 +19,21 @@ const variables = css`
     --font-sans: 'Calibre', 'San Francisco', 'SF Pro Text', -apple-system, system-ui, sans-serif;
     --font-mono: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
 
-    --fz-xxs: 12px;
-    --fz-xs: 13px;
-    --fz-sm: 14px;
-    --fz-md: 16px;
-    --fz-lg: 18px;
-    --fz-xl: 20px;
-    --fz-xxl: 22px;
-    --fz-heading: 32px;
+    --fz-xxs: 1.2rem;
+    --fz-xs: 1.3rem;
+    --fz-sm: 1.4rem;
+    --fz-md: 1.6rem;
+    --fz-lg: 1.8rem;
+    --fz-xl: 2rem;
+    --fz-xxl: 2.2rem;
+    --fz-heading: 3.2rem;
 
-    --border-radius: 4px;
-    --nav-height: 100px;
-    --nav-scroll-height: 70px;
+    --border-radius: .4rem;
+    --nav-height: 10rem;
+    --nav-scroll-height: 7rem;
 
-    --tab-height: 42px;
-    --tab-width: 120px;
+    --tab-height: 4.2rem;
+    --tab-width: 12rem;
 
     --easing: cubic-bezier(0.645, 0.045, 0.355, 1);
     --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);

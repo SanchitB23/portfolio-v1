@@ -5,10 +5,6 @@ import styled from "styled-components";
 import {navLinks} from "../../../config/constants";
 import {LayoutProps} from "../Interface";
 
-
-
-
-
 const renderNavLinks = () => {
     return navLinks.map((link, index) => {
         return <Link to={`#${link}`}><span>{index + 1}.</span> {link.charAt(0).toUpperCase() + link.slice(1)}</Link>
@@ -51,13 +47,13 @@ const NavBarStyle = styled.nav`
   top: 0;
   left: 0;
   width: 100%;
-  padding: 1rem 2rem;
+  padding: 1rem 4rem;
   height: 10rem;
 
 
   svg {
-    height: 5rem;
-    width: 5rem;
+    height: 4.2rem;
+    width: 4.2rem;
     fill: var(--orange);
   }
 
@@ -71,7 +67,7 @@ const NavBarStyle = styled.nav`
       a:link {
         margin: 0 2rem;
         padding: 5px 0;
-        color: #fff;
+        color: var(--lightest-slate);
         text-decoration: none;
         border-bottom: 2px solid transparent;
         -webkit-transition: border-bottom 0.2s;
