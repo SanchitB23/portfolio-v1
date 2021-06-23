@@ -23,7 +23,7 @@ const SEO: React.FC<SEOProps> = ({title, description, image, article}) => {
         defaultImage,
         twitterUsername,
     } = site.siteMetadata
-
+    console.log(site)
     const seo = {
         title: title || defaultTitle,
         description: description || defaultDescription,
@@ -74,6 +74,7 @@ const query = graphql`
             siteMetadata {
                 defaultTitle: title
                 defaultDescription: description
+                titleTemplate
                 siteUrl
                 defaultImage: image
                 twitterUsername

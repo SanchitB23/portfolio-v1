@@ -1,2 +1,17 @@
-@import "base";
-@import "animations";
+@import "config/functions";
+@import "config/mixins";
+@import "config/variables";
+
+@import "core/base";
+@import "core/animations";
+@import "core/typography";
+@import "core/utilities";
+
+@import "layouts/header";
+@import "layouts/grid";
+@import "layouts/footer";
+@import "layouts/navigation";
+
+@import "components/buttons";
+
+@import "pages/home";

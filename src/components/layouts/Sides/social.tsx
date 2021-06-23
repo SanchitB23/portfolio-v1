@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import {socialMedia} from '../../../config/constants';
 import Side from './index';
 import {LayoutProps} from "../Interface";
-import Icon from "../../../resources/icons/icons";
+import Icon from "../../icons/icons";
 
 
 const StyledSocial = styled.ul`

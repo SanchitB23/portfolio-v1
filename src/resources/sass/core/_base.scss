@@ -1,0 +1,87 @@
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+::selection {
+  background-color: var(--light-navy);
+  color: var(--orange2);
+}
+
+:focus {
+  outline: 2px dashed var(--orange);
+  outline-offset: 3px;
+}
+
+html {
+  font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
+}
+
+body {
+  background-color: var(--navy);
+  box-sizing: border-box;
+  color: var(--slate);
+  font-weight: 300;
+  font-size: 2rem;
+  font-family: var(--font-sans);
+}
+
+section {
+  margin: 0 auto;
+  padding: 10rem 0;
+  max-width: 100rem;
+
+  @media (max-width: 768px) {
+    padding: 8rem 0;
+  }
+
+  @media (max-width: 480px) {
+    padding: 6rem 0;
+  }
+}
+
+p {
+  margin: 20px 0 0;
+  max-width: 500px;
+  line-height: 2.5rem;
+  letter-spacing: 1px;
+
+  a {
+    display: inline-block;
+    text-decoration: none;
+    text-decoration-skip-ink: auto;
+    position: relative;
+    transition: var(--transition);
+    color: var(--orange);
+
+    &:after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      position: relative;
+      bottom: 0.5rem;
+      background-color: var(--orange);
+      transition: var(--transition);
+      opacity: 0.5;
+    }
+
+    &:hover:after {
+      width: 100%;
+      left: 0;
+      background: var(--orange);
+    }
+
+    &[target='_blank'] {
+      cursor: help;
+    }
+  }
+}
+
+span {
+  color: var(--orange);
+}

@@ -4,8 +4,10 @@ import NavBar from "./Navbar";
 import Footer from "./Footer";
 import Social from "./Sides/social";
 import Email from "./Sides/email";
+import {LayoutProps} from "./Interface";
 
-const Layout: React.FC = ({children}) => {
+
+const Layout: React.FC<LayoutProps> = ({children, title}) => {
     // const isHome = location.pathname === '/'
     /*if (isHome && isLoading) {
         return <Loader finishLoading={() => {
@@ -13,17 +15,17 @@ const Layout: React.FC = ({children}) => {
         }}/>
 
     }*/
+
     return (
         <React.Fragment>
-            <SEO/>
+            <SEO title={title}/>
             <NavBar isHome={true}/>
             <Social isHome={true}/>
             <Email isHome={true}/>
-            {children}
+            <main>{children}</main>
             <Footer/>
         </React.Fragment>
     );
 };
-
 
 export default Layout;

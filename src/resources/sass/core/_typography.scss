@@ -1,0 +1,47 @@
+.test__h1 {
+  color: #000;
+}
+
+.big-heading {
+  margin: 0;
+  font-size: clamp(4rem, 8vw, 8rem);
+  color: var(--lightest-slate);
+}
+
+.medium-heading {
+  margin: 0;
+  font-size: clamp(4rem, 8vw, 6rem);
+}
+
+.section-heading {
+  font-size: 3rem;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  color: var(--lightest-slate);
+  font-weight: 600;
+
+  &:before {
+    position: relative;
+    counter-increment: section 1;
+    content: "0" counter(section) ".";
+    margin-right: 1rem;
+    font-weight: 400;
+    font-size: clamp(var(--fz-md), 3vw, var(--fz-xl));
+    color: var(--orange);
+    font-family: var(--font-mono);
+    bottom: 4px;
+  }
+
+  &:after {
+    content: "";
+    display: block;
+    position: relative;
+    width: 30rem;
+    height: 1px;
+    background-color: var(--orange-tint);
+    margin-left: 3rem;
+    top: -.3rem
+  }
+
+}

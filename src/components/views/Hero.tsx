@@ -20,7 +20,7 @@ const four = (
     </p>
 );
 const five = (
-    <a href={`mailto:${email}`} className="email-link">
+    <a href={`mailto:${email}`} className="btn email-link">
         Get In Touch
     </a>
 );
@@ -54,7 +54,7 @@ const Hero = () => {
                     {isMounted &&
                     items.map((item, i) => (
                         <CSSTransition key={i} classNames="fadeup" timeout={loaderDelay}>
-                            <div style={{transitionDelay: `${i + 1}00ms`}}>{item}</div>
+                            <div style={{transitionDelay: `${i + 1}00ms`}} className="content">{item}</div>
                         </CSSTransition>
                     ))}
                 </TransitionGroup>
@@ -63,7 +63,8 @@ const Hero = () => {
     );
 };
 
-const Wrapper = styled.header`
+const Wrapper = styled.section`
+  margin-top: 5rem;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -93,53 +94,15 @@ const Wrapper = styled.header`
     line-height: 0.9;
   }
 
-  p {
-    margin: 20px 0 0;
-    max-width: 500px;
-
-    a {
-      display: inline-block;
-      text-decoration: none;
-      text-decoration-skip-ink: auto;
-      position: relative;
-      transition: var(--transition);
-      color: var(--orange);
-
-      &:after {
-        content: '';
-        display: block;
-        width: 0;
-        height: 2px;
-        position: relative;
-        bottom: 0.5rem;
-        background-color: var(--orange);
-        transition: var(--transition);
-        opacity: 0.5;
-      }
-
-      :hover:after {
-        width: 100%;
-        left: 0;
-        background: var(--orange);
-      }
-
-      &[target='_blank'] {
-        cursor: help;
-      }
+  .content {
+    :last-child {
+      margin-top: 7rem;
     }
+
   }
 
   .email-link {
-    position: relative;
-    top: 5rem;
-    font-size: 1.5rem;
-    font-family: var(--font-mono);
-    border: 2px solid var(--orange);
-    border-radius: 4px;
-    text-align: center;
     padding: 2rem 3rem;
-    text-decoration: none;
-    color: var(--orange);
   }
 `;
 

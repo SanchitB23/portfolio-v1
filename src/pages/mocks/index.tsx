@@ -1,21 +1,17 @@
 import React from 'react';
 import styled from "styled-components";
-import Logo from "../../resources/icons/Logo";
+import Layout from "../../components/layouts";
 
 
 const Test: React.FC = (props) => {
     console.log(props)
     return (
-        <Wrapper>
-            <Logo/>
-            <h1>HEllo</h1>
-        </Wrapper>
+        <Layout isHome={false}>
+            <StyledHeader className="test__h1">Hello</StyledHeader>
+        </Layout>
     );
 };
-
-const Wrapper = styled.div`
-  svg {
-    fill: orangered;
-  }
+const StyledHeader = styled.h1`
+  color: orangered;
 `
 export default Test;

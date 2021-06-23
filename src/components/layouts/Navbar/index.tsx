@@ -1,13 +1,14 @@
 import React from 'react';
 import {Link} from "gatsby";
-import IconLogo from "../../../resources/icons/Logo";
+import IconLogo from "../../icons/Logo";
 import styled from "styled-components";
 import {navLinks} from "../../../config/constants";
 import {LayoutProps} from "../Interface";
 
 const renderNavLinks = () => {
     return navLinks.map((link, index) => {
-        return <Link to={`#${link}`}><span>{index + 1}.</span> {link.charAt(0).toUpperCase() + link.slice(1)}</Link>
+        return <Link to={`#${link}`}
+                     key={index}><span>{index + 1}.</span> {link.charAt(0).toUpperCase() + link.slice(1)}</Link>
     })
 }
 
@@ -32,9 +33,7 @@ const NavBar: React.FC<LayoutProps> = ({isHome}) => {
                 <ol>
                     {renderNavLinks()}
                 </ol>
-                <div className="resume">
-                    <a href="/">Resume</a>
-                </div>
+                <a className="btn">Resume</a>
             </div>
         </NavBarStyle>
     );
@@ -49,7 +48,7 @@ const NavBarStyle = styled.nav`
   width: 100%;
   padding: 1rem 4rem;
   height: 10rem;
-
+  backdrop-filter: blur(10px);
 
   svg {
     height: 4.2rem;
@@ -76,10 +75,6 @@ const NavBarStyle = styled.nav`
         font-family: var(--font-mono);
       }
 
-      span {
-        color: var(--orange);
-      }
-
       a:active,
       a:hover {
         color: var(--orange);
@@ -87,20 +82,5 @@ const NavBarStyle = styled.nav`
     }
   }
 
-  .resume {
-    margin: 0 2rem;
-    font-size: 1.3rem;
-    font-family: var(--font-mono);
-    border: 2px solid var(--orange);
-    border-radius: 4px;
-    text-align: center;
-    padding: 1rem 1.5rem;
-
-    a:visited,
-    a:link {
-      text-decoration: none;
-      color: var(--orange);
-    }
-  }
 `
 export default NavBar;

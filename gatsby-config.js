@@ -5,8 +5,9 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: "SanchitB23",
-    siteUrl: 'https://sanchitb23.github.io',
+    title: "Sanchit Bhatnagar",
+    titleTemplate: `%s | SanchitB23`,
+    siteUrl: 'https://sanchitb23.netlify.app',
     description:
         'Sanchit Bhatnagar is a software engineer who specializes in building (and occasionally designing) exceptional digital experiences.',
     image: '/og.png', // Path to your image you placed in the 'static' folder
@@ -34,9 +35,9 @@ module.exports = {
         name: 'Sanchit Bhatnagar',
         short_name: 'SanchitB23',
         start_url: '/',
-        /*background_color: config.colors.darkNavy,
-        theme_color: config.colors.navy,*/
-        icon: "src/resources/images/icon.png",
+        background_color: "#0a192f",
+        theme_color: "#FCA311",
+        icon: "src/resources/icons/Logo.png",
       },
     },
     {

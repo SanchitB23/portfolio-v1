@@ -1,21 +1,23 @@
 import * as React from "react"
 import Layout from "../components/layouts";
 import Hero from "../components/views/Hero";
-import styled from "styled-components";
+import About from "../components/views/About";
+import Jobs from "../components/views/Jobs";
+import Projects from "../components/views/Projects";
+import Contact from "../components/views/Contact";
 
 // markup
 const LandingPage = () => {
-  return (
-      <Layout>
-        <MainWrapper>
-          <Hero/>
-        </MainWrapper>
-      </Layout>
-  )
+    return (
+        <Layout isHome title="Home">
+            <Hero/>
+            <About/>
+            <Jobs/>
+            <Projects/>
+            <Contact/>
+        </Layout>
+    )
 }
 
-const MainWrapper = styled.main`
-  padding: 0 15rem;
-`
 
 export default LandingPage
