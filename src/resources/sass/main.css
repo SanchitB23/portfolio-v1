@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root {
   --dark-navy: #020c1b;
   --navy: #0a192f;
@@ -70,17 +71,17 @@ body {
 
 section {
   margin: 0 auto;
-  padding: 10rem 0;
+  padding: 10rem 1rem;
   max-width: 100rem;
 }
 @media (max-width: 768px) {
   section {
-    padding: 8rem 0;
+    padding: 8rem 1rem;
   }
 }
 @media (max-width: 480px) {
   section {
-    padding: 6rem 0;
+    padding: 6rem 1rem;
   }
 }
 
@@ -231,6 +232,82 @@ span {
 }
 .btn:after {
   display: none !important;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  align-items: baseline;
+}
+.about-content .photo {
+  display: block;
+  position: relative;
+  width: 100%;
+  border-radius: var(--border-radius);
+  background-color: var(--orange);
+}
+.about-content .photo:hover, .about-content .photo:focus {
+  background: transparent;
+  outline: 0;
+}
+.about-content .photo:hover:after, .about-content .photo:focus:after {
+  top: 15px;
+  left: 15px;
+}
+.about-content .photo:hover .img, .about-content .photo:focus .img {
+  filter: none;
+  mix-blend-mode: normal;
+}
+.about-content .photo .img {
+  position: relative;
+  border-radius: var(--border-radius);
+  mix-blend-mode: multiply;
+  filter: grayscale(100%) contrast(1);
+  transition: var(--transition);
+}
+.about-content .photo:before, .about-content .photo:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+}
+.about-content .photo:before {
+  top: 0;
+  left: 0;
+  background-color: var(--navy);
+  mix-blend-mode: screen;
+}
+.about-content .photo:after {
+  border: 2px solid var(--orange);
+  top: 20px;
+  left: 20px;
+  z-index: -1;
+}
+.about-content .skill-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(140px, 200px));
+  padding: 0;
+  margin: 20px 0 0 0;
+  overflow: hidden;
+  list-style: none;
+}
+.about-content .skill-list li {
+  position: relative;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  font-family: var(--font-mono);
+  font-size: var(--fz-xs);
+}
+.about-content .skill-list li:before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: var(--orange);
+  font-size: var(--fz-sm);
+  line-height: 12px;
 }
 
 /*# sourceMappingURL=main.css.map */

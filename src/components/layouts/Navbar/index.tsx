@@ -47,7 +47,6 @@ const NavBarStyle = styled.nav`
   left: 0;
   width: 100%;
   padding: 1rem 4rem;
-  height: 10rem;
   backdrop-filter: blur(10px);
 
   svg {
