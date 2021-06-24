@@ -117,3 +117,4 @@ dist
 
 /.env.development
 /public/
+/.env.production

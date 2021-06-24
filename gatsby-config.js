@@ -11,7 +11,7 @@ module.exports = {
     description:
         'Sanchit Bhatnagar is a software engineer who specializes in building (and occasionally designing) exceptional digital experiences.',
     image: '/preview.png', // Path to your image you placed in the 'static' folder
-    twitterUsername: '@sanchitb23',
+    twitterUsername: '@sanchit1249',
   },
   plugins: [
     "gatsby-plugin-sass",
