@@ -12,6 +12,9 @@
     "start": "gatsby develop",
     "prestart": "npm run clean",
     "build": "gatsby build",
+    "predevbuild": "npm run clean",
+    "devbuild": "npm run build",
+    "postdevbuild": "npm run serve",
     "serve": "gatsby serve",
     "clean": "gatsby clean"
   },

@@ -24,12 +24,6 @@ module.exports = {
     "gatsby-plugin-sitemap",
     `gatsby-plugin-offline`,
     {
-      resolve: "gatsby-plugin-google-analytics",
-      options: {
-        trackingId: "UA-199966249-1",
-      },
-    },
-    {
       resolve: "gatsby-plugin-manifest",
       options: {
         name: 'Sanchit Bhatnagar',
@@ -37,7 +31,7 @@ module.exports = {
         start_url: '/',
         background_color: "#0a192f",
         theme_color: "#FCA311",
-        icon: "src/resources/icons/Logo.png",
+        icon: "src/resources/icons/Logo-outline.png",
       },
     },
     {
@@ -65,4 +59,5 @@ module.exports = {
       },
     }
   ],
-};
+}
+;
