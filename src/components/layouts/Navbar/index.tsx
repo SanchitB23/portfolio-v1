@@ -1,20 +1,21 @@
 import React from 'react';
 import {Link} from "gatsby";
 import IconLogo from "../../icons/Logo";
-import styled from "styled-components";
 import {navLinks} from "../../../config/constants";
 import {LayoutProps} from "../Interface";
 
 const renderNavLinks = () => {
     return navLinks.map((link, index) => {
         return <Link to={`#${link}`}
-                     key={index}><span>{index + 1}.</span> {link.charAt(0).toUpperCase() + link.slice(1)}</Link>
+                     key={index} className="nav__links__item">{link}</Link>
     })
 }
 
 const NavBar: React.FC<LayoutProps> = ({isHome}) => {
+
+
     const Logo = (
-        <div className="logo" tabIndex={-1}>
+        <div tabIndex={-1}>
             {isHome ? (
                 <a href="/" aria-label="home">
                     <IconLogo/>
@@ -27,18 +28,18 @@ const NavBar: React.FC<LayoutProps> = ({isHome}) => {
         </div>
     );
     return (
-        <NavBarStyle>
+        <nav className="nav">
             {Logo}
-            <div className="links">
+            <div className="nav__links">
                 <ol>
                     {renderNavLinks()}
                 </ol>
                 <a className="btn">Resume</a>
             </div>
-        </NavBarStyle>
+        </nav>
     );
 };
-const NavBarStyle = styled.nav`
+/*const NavBarStyle = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -56,7 +57,7 @@ const NavBarStyle = styled.nav`
     fill: var(--orange);
   }
 
-  .links {
+  .nav__links {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -82,5 +83,5 @@ const NavBarStyle = styled.nav`
     }
   }
 
-`
+`*/
 export default NavBar;

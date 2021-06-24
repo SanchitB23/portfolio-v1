@@ -3,6 +3,7 @@ import {graphql, useStaticQuery} from "gatsby";
 import styled from "styled-components";
 import {CSSTransition} from "react-transition-group";
 import sr, {srConfig} from "../../config/utils/scrollReveal";
+import {navLinks} from "../../config/constants";
 
 interface JobType {
     allContentfulJobs: {
@@ -32,7 +33,7 @@ const Jobs = () => {
     })
     /*HTML Return */
     return (
-        <section id="experience" className="jobs" ref={revealSection}>
+        <section id={navLinks[1]} className="jobs" ref={revealSection}>
             <h1 className="section-heading">Where I've Worked</h1>
             <div className="jobs__content">
                 <div className="tabs-list">

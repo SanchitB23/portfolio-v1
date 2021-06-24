@@ -5,10 +5,6 @@ export const socialMedia = [
         name: 'GitHub',
         url: 'https://github.com/SanchitB23',
     },
-    /*    {
-            name: 'Instagram',
-            url: 'https://www.instagram.com/bchiang7',
-        },*/
     {
         name: 'Twitter',
         url: 'https://twitter.com/Sanchit1249',
