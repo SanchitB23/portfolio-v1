@@ -48,6 +48,7 @@ const NavBarStyle = styled.nav`
   width: 100%;
   padding: 1rem 4rem;
   backdrop-filter: blur(10px);
+  z-index: 100;
 
   svg {
     height: 4.2rem;

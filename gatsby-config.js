@@ -10,7 +10,7 @@ module.exports = {
     siteUrl: 'https://sanchitb23.netlify.app',
     description:
         'Sanchit Bhatnagar is a software engineer who specializes in building (and occasionally designing) exceptional digital experiences.',
-    image: '/og.png', // Path to your image you placed in the 'static' folder
+    image: '/preview.png', // Path to your image you placed in the 'static' folder
     twitterUsername: '@sanchitb23',
   },
   plugins: [

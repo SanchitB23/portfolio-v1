@@ -82,6 +82,32 @@ p {
   }
 }
 
+ul {
+  &.fancy-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-size: var(--fz-lg);
+
+    li {
+      position: relative;
+      padding-left: 30px;
+      margin-bottom: 10px;
+
+      &:before {
+        content: '▹';
+        position: absolute;
+        left: 0;
+        color: var(--orange);
+      }
+    }
+  }
+}
+
 span {
   color: var(--orange);
+}
+
+main {
+  counter-reset: section;
 }

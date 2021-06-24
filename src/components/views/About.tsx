@@ -1,23 +1,19 @@
-import React from 'react';
+import React, {useEffect, useRef} from 'react';
 import {StaticImage} from "gatsby-plugin-image";
 import {graphql, useStaticQuery} from "gatsby";
+import sr, {srConfig} from "../../config/utils/scrollReveal";
 
 const About = () => {
-  const {allContentfulProjectTags: {nodes: data}} = useStaticQuery(graphql`
-      {
-          allContentfulProjectTags(
-              sort: {fields: name, order: ASC}
-              filter: {featured: {eq: true}}
-          ) {
-              nodes {
-                  name
-              }
-          }
-      }
-  `)
+    const {allContentfulProjectTags: {nodes: data}} = useStaticQuery(tagsQuery)
+    const revealSection = useRef(null);
+
+    useEffect(() => {
+        // @ts-ignore
+        sr?.reveal(revealSection.current, srConfig())
+    })
     console.log(data)
     return (
-        <section>
+        <section id="about" ref={revealSection}>
             <h1 className="section-heading">about me</h1>
             <div className="about-content">
                 <div>
@@ -49,4 +45,16 @@ const About = () => {
     );
 };
 
+const tagsQuery = graphql`
+    {
+        allContentfulProjectTags(
+            sort: {fields: name, order: ASC}
+            filter: {featured: {eq: true}}
+        ) {
+            nodes {
+                name
+            }
+        }
+    }
+`
 export default About;
