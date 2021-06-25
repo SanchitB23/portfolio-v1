@@ -47,8 +47,7 @@ const StyledSocial = styled.ul`
     }
 
     a {
-      padding: 1rem;
-      margin-bottom: 2rem;
+      padding: 0 1rem;
 
       svg {
         height: 2rem;
