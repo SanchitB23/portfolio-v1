@@ -15,6 +15,7 @@
     "predevbuild": "npm run clean",
     "devbuild": "npm run build",
     "postdevbuild": "npm run serve",
+    "start:local": "gatsby develop -H 0.0.0.0",
     "serve": "gatsby serve",
     "clean": "gatsby clean"
   },
