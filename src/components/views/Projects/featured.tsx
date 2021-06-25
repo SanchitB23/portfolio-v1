@@ -10,25 +10,25 @@ const FeaturedProjects = () => {
     const {allContentfulProjects: {nodes: projects}} = data;
     console.log(projects)
     return (
-        <section className="projects" id={navLinks[2]}>
+        <section className="featured" id={navLinks[2]}>
             <h1 className="section-heading">Some Things I've Built</h1>
-            <ul className="projects__list">
+            <ul className="featured__list">
                 {
                     projects && projects.map((project, index) => {
                         const {tags, description, url, title, image} = project;
                         const cover = getImage(image)
                         return (
-                            <li className="projects__list__item" key={index}>
-                                <div className="projects__list__item__content">
-                                    <p className="projects__list__item__content__overline">Featured Project</p>
-                                    <h3 className="projects__list__item__content__title">
+                            <li className="featured__list__item" key={index}>
+                                <div className="featured__list__item__content">
+                                    <p className="featured__list__item__content__overline">Featured Project</p>
+                                    <h3 className="featured__list__item__content__title">
                                         <a href={url[1] || url[0]}>{title}</a>
                                     </h3>
-                                    <div className="projects__list__item__content__description">
+                                    <div className="featured__list__item__content__description">
                                         {description}
                                     </div>
                                     {tags.length && (
-                                        <ul className="projects__list__item__content__tag-list">
+                                        <ul className="featured__list__item__content__tag-list">
                                             {tags.map(({name}, index) => (
                                                 <li key={index}>
                                                     {name}
@@ -37,7 +37,7 @@ const FeaturedProjects = () => {
                                         </ul>
                                     )}
                                     {url.length && (
-                                        <ul className="projects__list__item__content__links">
+                                        <ul className="featured__list__item__content__links">
                                             {url.map((link, index) => (
                                                 <li key={index}>
                                                     <a href={link}>
@@ -48,11 +48,11 @@ const FeaturedProjects = () => {
                                         </ul>
                                     )}
                                 </div>
-                                <div className="projects__list__item__image">
-                                    <a href={url[1] || url[0]}>
+                                <div className="featured__list__item__image">
+                                    <a href={url[1] || url[0]} className="featured__list__item__image__link">
                                         {/*@ts-ignore*/}
                                         <GatsbyImage image={cover} alt={title}
-                                                     className="projects__list__item__image__img"/>
+                                                     className="featured__list__item__image__link__img"/>
                                     </a>
                                 </div>
                             </li>

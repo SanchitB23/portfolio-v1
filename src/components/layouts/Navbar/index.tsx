@@ -12,8 +12,6 @@ const renderNavLinks = () => {
 }
 
 const NavBar: React.FC<LayoutProps> = ({isHome}) => {
-
-
     const Logo = (
         <div tabIndex={-1}>
             {isHome ? (
