@@ -1,16 +1,22 @@
-import React from 'react';
+import React, {useEffect, useRef} from 'react';
 import {graphql, useStaticQuery} from "gatsby";
 import {GatsbyImage, getImage} from "gatsby-plugin-image";
 import {navLinks} from "../../../config/constants";
 import {ProjectsDataType} from "./projectInterface";
 import Icon from "../../icons/icons";
+import sr, {srConfig} from "../../../config/utils/scrollReveal";
 
 const FeaturedProjects = () => {
     const data: ProjectsDataType = useStaticQuery(projectsQuery)
     const {allContentfulProjects: {nodes: projects}} = data;
-    console.log(projects)
+    const revealSection = useRef<HTMLElement>(null);
+
+    useEffect(() => {
+        // @ts-ignore
+        sr?.reveal(revealSection.current, srConfig())
+    })
     return (
-        <section className="featured" id={navLinks[2]}>
+        <section className="featured" id={navLinks[2]} ref={revealSection}>
             <h1 className="section-heading">Some Things I've Built</h1>
             <ul className="featured__list">
                 {
