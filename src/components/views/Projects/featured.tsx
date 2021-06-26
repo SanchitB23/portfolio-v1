@@ -13,7 +13,7 @@ const FeaturedProjects: React.FC<ProjectComponentProps> = ({ProjectLinkIcons}) =
     useEffect(() => {
         // @ts-ignore
         sr?.reveal(revealSection.current, srConfig())
-    })
+    }, [])
     return (
         <section className="featured" id={navLinks[2]} ref={revealSection}>
             <h1 className="section-heading">Some Things I've Built</h1>

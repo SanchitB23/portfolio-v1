@@ -11,7 +11,7 @@ const About = () => {
     useEffect(() => {
         // @ts-ignore
         sr?.reveal(revealSection.current, srConfig())
-    })
+    }, [])
     return (
         <section id={navLinks[0]} ref={revealSection} className="about">
             <h1 className="section-heading">about me</h1>

@@ -30,7 +30,7 @@ const Jobs = () => {
     useEffect(() => {
         // @ts-ignore
         sr?.reveal(revealSection.current, srConfig())
-    })
+    }, [])
     /*HTML Return */
     return (
         <section id={navLinks[1]} className="jobs" ref={revealSection}>
