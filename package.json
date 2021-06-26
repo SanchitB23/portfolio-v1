@@ -24,7 +24,8 @@
     "postdevbuild": "npm run serve",
     "start:local": "gatsby develop -H 0.0.0.0",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "lint": "eslint . --ext .ts"
   },
   "dependencies": {
     "animejs": "^3.2.1",
@@ -59,6 +60,11 @@
     "@types/react-helmet": "^6.1.1",
     "@types/react-transition-group": "^4.4.1",
     "@types/styled-components": "^5.1.10",
-    "@types/scrollreveal": "^0.0.6"
+    "@types/scrollreveal": "^0.0.6",
+    "eslint": "^7.29.0",
+    "@typescript-eslint/parser": "^4.28.0",
+    "@typescript-eslint/eslint-plugin": "^4.28.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "typescript": "^4.3.4"
   }
 }
