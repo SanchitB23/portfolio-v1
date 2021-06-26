@@ -111,113 +111,6 @@
           font-size: var(--fz-xs);
           font-weight: 400;
         }
-
-        &__title {
-          color: var(--lightest-slate);
-          font-size: clamp(2.4rem, 5vw, 2.8rem);
-
-          @media (min-width: 768px) {
-            margin: 0 0 20px;
-          }
-
-          @media (max-width: 768px) {
-            color: var(--white);
-
-            a {
-              position: static;
-
-              &:before {
-                content: '';
-                display: block;
-                position: absolute;
-                z-index: 0;
-                width: 100%;
-                height: 100%;
-                top: 0;
-                left: 0;
-              }
-            }
-          }
-        }
-
-        &__description {
-          @include boxShadow;
-          position: relative;
-          z-index: 2;
-          padding: 2.5rem;
-          border-radius: var(--border-radius);
-          background-color: var(--light-navy);
-          color: var(--light-slate);
-          font-size: var(--fz-lg);
-
-          @media (max-width: 768px) {
-            padding: 2rem 0;
-            background-color: transparent;
-            box-shadow: none;
-
-            &:hover {
-              box-shadow: none;
-            }
-          }
-
-          a {
-            @include inlink-link;
-          }
-        }
-
-        &__tag-list {
-          display: flex;
-          flex-wrap: wrap;
-          position: relative;
-          z-index: 2;
-          margin: 2.5rem 0 1rem;
-          padding: 0;
-          list-style: none;
-
-          li {
-            margin: 0 2rem .5rem 0;
-            color: var(--light-slate);
-            font-family: var(--font-mono);
-            font-size: var(--fz-xs);
-            white-space: nowrap;
-          }
-
-          @media (max-width: 768px) {
-            margin: 1rem 0;
-
-            li {
-              margin: 0 1rem .5rem 0;
-              color: var(--lightest-slate);
-            }
-          }
-        }
-
-        &__links {
-          @include resetList;
-          display: flex;
-          align-items: center;
-          position: relative;
-          margin-top: 1rem;
-          margin-left: -1rem;
-          color: var(--lightest-slate);
-
-
-          a {
-            @include flexCenter;
-            padding: 1rem;
-
-            svg {
-              width: 2rem;
-              height: 2rem;
-
-              &.svg-npm {
-                width: 3.5rem;
-                fill: var(--lightest-slate);
-                height: 3.5rem;
-              }
-            }
-          }
-        }
       }
 
       &__image {
@@ -279,6 +172,214 @@
               filter: grayscale(100%) contrast(1) brightness(80%);
             }
           }
+        }
+      }
+    }
+  }
+}
+
+.projects {
+  @include flexCenter;
+  flex-direction: column;
+
+  &__header {
+    @include flexCenter;
+    flex-direction: column;
+    color: var(--light-slate);
+
+    h2 {
+      font-size: 3.2rem;
+    }
+
+    p {
+      font-size: 1.4rem;
+      font-family: 'SF Mono', monospace;
+      margin-top: 1rem;
+    }
+  }
+
+  &__grid {
+    @include resetList;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(30rem, 1fr));
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    grid-gap: 2rem;
+    margin-top: 3rem;
+    @media (max-width: 1080px) {
+      grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+
+    }
+
+    &__item {
+      @include flexBetween;
+      flex-direction: column;
+      align-items: flex-start;
+
+      height: 100%;
+      background-color: var(--light-navy);
+      padding: 2rem 1.75rem;
+      transition: var(--transition);
+
+      &:hover {
+        cursor: pointer;
+        transform: translateY(-.7rem);
+
+        h3 {
+          color: var(--orange);
+        }
+      }
+
+      header {
+        @include flexBetween;
+        margin-bottom: 2rem;
+        align-items: flex-end;
+
+        & > svg {
+          height: 4rem;
+          width: 4rem;
+          stroke: var(--orange);
+        }
+
+        ul {
+          @include resetList;
+          display: flex;
+
+          :not(:first-child) {
+            margin-left: 1rem;
+          }
+
+          li a svg {
+            height: 2rem;
+            width: 2rem;
+          }
+        }
+      }
+
+      h3 {
+        font-size: 2.2rem;
+        font-weight: 600;
+        color: var(--lightest-slate);
+      }
+
+      p {
+        color: var(--light-slate);
+        font-size: 1.7rem;
+        line-height: 2.2rem;
+      }
+    }
+  }
+
+  & > button {
+    margin-top: 7rem;
+  }
+}
+
+.project {
+  &__heading {
+    color: var(--lightest-slate);
+    font-size: clamp(2.4rem, 5vw, 2.8rem);
+
+    @media (min-width: 768px) {
+      margin: 0 0 20px;
+    }
+
+    @media (max-width: 768px) {
+      color: var(--white);
+
+      a {
+        position: static;
+
+        &:before {
+          content: '';
+          display: block;
+          position: absolute;
+          z-index: 0;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+        }
+      }
+    }
+  }
+
+  &__description {
+    @include boxShadow;
+    position: relative;
+    z-index: 2;
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    background-color: var(--light-navy);
+    color: var(--light-slate);
+    font-size: var(--fz-lg);
+
+    @media (max-width: 768px) {
+      padding: 2rem 0;
+      background-color: transparent;
+      box-shadow: none;
+
+      &:hover {
+        box-shadow: none;
+      }
+    }
+
+    a {
+      @include inlink-link;
+    }
+  }
+
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+    margin: 2.5rem 0 1rem;
+    padding: 0;
+    list-style: none;
+
+    li {
+      margin: 0 2rem .5rem 0;
+      color: var(--light-slate);
+      font-family: var(--font-mono);
+      font-size: var(--fz-xs);
+      white-space: nowrap;
+    }
+
+    @media (max-width: 768px) {
+      margin: 1rem 0;
+
+      li {
+        margin: 0 1rem .5rem 0;
+        color: var(--lightest-slate);
+      }
+    }
+  }
+
+  &__links {
+    @include resetList;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-top: 1rem;
+    margin-left: -1rem;
+    color: var(--lightest-slate);
+
+
+    a {
+      @include flexCenter;
+      padding: 1rem;
+
+      svg {
+        width: 2rem;
+        height: 2rem;
+
+        &.svg-npm {
+          width: 3.5rem;
+          fill: var(--lightest-slate);
+          height: 3.5rem;
         }
       }
     }

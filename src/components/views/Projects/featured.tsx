@@ -2,11 +2,10 @@ import React, {useEffect, useRef} from 'react';
 import {graphql, useStaticQuery} from "gatsby";
 import {GatsbyImage, getImage} from "gatsby-plugin-image";
 import {navLinks} from "../../../config/constants";
-import {ProjectsDataType} from "./projectInterface";
-import Icon from "../../icons/icons";
+import {ProjectComponentProps, ProjectsDataType} from "./projectInterface";
 import sr, {srConfig} from "../../../config/utils/scrollReveal";
 
-const FeaturedProjects = () => {
+const FeaturedProjects: React.FC<ProjectComponentProps> = ({ProjectLinkIcons}) => {
     const data: ProjectsDataType = useStaticQuery(projectsQuery)
     const {allContentfulProjects: {nodes: projects}} = data;
     const revealSection = useRef<HTMLElement>(null);
@@ -22,19 +21,20 @@ const FeaturedProjects = () => {
                 {
                     projects && projects.map((project, index) => {
                         const {tags, description, url, title, image} = project;
+                        // @ts-ignore
                         const cover = getImage(image)
                         return (
                             <li className="featured__list__item" key={index}>
                                 <div className="featured__list__item__content">
                                     <p className="featured__list__item__content__overline">Featured Project</p>
-                                    <h3 className="featured__list__item__content__title">
+                                    <h3 className="project__heading">
                                         <a href={url[1] || url[0]}>{title}</a>
                                     </h3>
-                                    <div className="featured__list__item__content__description">
+                                    <div className="project__description">
                                         {description}
                                     </div>
                                     {tags.length && (
-                                        <ul className="featured__list__item__content__tag-list">
+                                        <ul className="project__tags featured__list__item__content__tag-list">
                                             {tags.map(({name}, index) => (
                                                 <li key={index}>
                                                     {name}
@@ -43,7 +43,7 @@ const FeaturedProjects = () => {
                                         </ul>
                                     )}
                                     {url.length && (
-                                        <ul className="featured__list__item__content__links">
+                                        <ul className="project__links featured__list__item__content__links">
                                             {url.map((link, index) => (
                                                 <li key={index}>
                                                     <a href={link}>
@@ -70,11 +70,6 @@ const FeaturedProjects = () => {
     );
 };
 
-const ProjectLinkIcons = [
-    <Icon name="GitHub"/>,
-    <Icon name="External"/>,
-    <Icon name="NPM"/>
-]
 
 const projectsQuery = graphql`
     {

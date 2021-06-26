@@ -6,7 +6,7 @@ import Jobs from "../components/views/Jobs";
 import Projects from "../components/views/Projects";
 import Contact from "../components/views/Contact";
 
-// markup
+//todo fix useEffect to CDM only
 const LandingPage = () => {
     return (
         <Layout isHome title="Home">

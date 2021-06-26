@@ -5,7 +5,7 @@ export interface ProjectsDataType {
         nodes:
             [{
                 description: string
-                image: ImageDataLike
+                image?: ImageDataLike
                 tags: [{
                     name: string
                 }]
@@ -14,4 +14,8 @@ export interface ProjectsDataType {
             }]
 
     }
+}
+
+export interface ProjectComponentProps {
+    ProjectLinkIcons: JSX.Element[]
 }

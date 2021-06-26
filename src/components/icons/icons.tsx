@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import {IconGitHub, IconLinkedin, IconStackoverflow, IconTwitter} from './index';
 import IconNpm from "./npm";
 import IconExternal from "./external";
+import IconFolder from "./folder";
+import {iconNames} from "../../config/constants";
 
 interface IconInterface {
     name: string
@@ -10,18 +12,20 @@ interface IconInterface {
 
 const Icon: React.FC<IconInterface> = ({name}) => {
     switch (name) {
-        case 'GitHub':
+        case iconNames.GitHub:
             return <IconGitHub/>;
-        case 'Linkedin':
+        case iconNames.Linkedin:
             return <IconLinkedin/>;
-        case 'Twitter':
+        case iconNames.Twitter:
             return <IconTwitter/>;
-        case 'StackOverflow':
+        case iconNames.StackOverflow:
             return <IconStackoverflow/>
-        case 'NPM':
+        case iconNames.NPM:
             return <IconNpm/>
-        case 'External':
+        case iconNames.External:
             return <IconExternal/>
+        case iconNames.Folder:
+            return <IconFolder/>
         default:
             return <>{name}</>
     }

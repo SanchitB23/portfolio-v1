@@ -18,3 +18,12 @@ export const socialMedia = [
         url: 'https://stackoverflow.com/users/9543569/sanchit-bhatnagar',
     },
 ]
+export const iconNames = {
+    GitHub: 'GitHub',
+    Twitter: 'Twitter',
+    StackOverflow: 'StackOverflow',
+    NPM: 'NPM',
+    External: 'External',
+    Folder: 'Folder',
+    Linkedin: 'Linkedin'
+}
