@@ -1,0 +1,16 @@
+footer {
+  @include flexCenter;
+  flex-direction: column;
+  height: auto;
+  min-height: 70px;
+  padding: 15px;
+  text-align: center;
+
+  div {
+    color: var(--light-slate);
+    font-family: var(--font-mono);
+    font-size: var(--fz-xxs);
+    line-height: 1;
+    padding: 10px;
+  }
+}

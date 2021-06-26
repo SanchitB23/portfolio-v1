@@ -1,0 +1,33 @@
+.contact {
+  @include flexCenter;
+  flex-direction: column;
+
+  &__heading {
+    display: block;
+    margin-bottom: 2rem;
+    color: var(--orange);
+    font-family: var(--font-mono);
+    font-size: var(--fz-md);
+    font-weight: 400;
+
+    &:before {
+      bottom: 0;
+      font-size: var(--fz-sm);
+    }
+
+    &:after {
+      display: none;
+    }
+  }
+
+  &__sub-heading {
+    font-size: clamp(40px, 5vw, 60px);
+    color: var(--lightest-slate);
+    text-transform: capitalize;
+  }
+
+  &__form {
+    padding: 1rem 6rem;
+    width: 60%;
+  }
+}

@@ -4,7 +4,7 @@ import {graphql, useStaticQuery} from "gatsby";
 import sr, {srConfig} from "../../config/utils/scrollReveal";
 import {navLinks} from "../../config/constants";
 
-const About = () => {
+const About: React.FC = () => {
     const {allContentfulProjectTags: {nodes: data}} = useStaticQuery(tagsQuery)
     const revealSection = useRef(null);
 
