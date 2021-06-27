@@ -2,15 +2,21 @@ footer {
   @include flexCenter;
   flex-direction: column;
   height: auto;
-  min-height: 70px;
-  padding: 15px;
+  min-height: 7rem;
+  padding: 1.2rem;
   text-align: center;
+
+  &.not-home {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
 
   div {
     color: var(--light-slate);
     font-family: var(--font-mono);
     font-size: var(--fz-xxs);
     line-height: 1;
-    padding: 10px;
+    padding: 1rem;
   }
 }

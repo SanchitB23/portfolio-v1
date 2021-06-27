@@ -285,16 +285,23 @@ footer {
   align-items: center;
   flex-direction: column;
   height: auto;
-  min-height: 70px;
-  padding: 15px;
+  min-height: 7rem;
+  padding: 1.2rem;
   text-align: center;
 }
+
+footer.not-home {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
 footer div {
   color: var(--light-slate);
   font-family: var(--font-mono);
   font-size: var(--fz-xxs);
   line-height: 1;
-  padding: 10px;
+  padding: 1rem;
 }
 
 .nav {
@@ -819,13 +826,11 @@ footer div {
   grid-template-columns: repeat(12, 1fr);
   align-items: center;
 }
-
 @media (max-width: 768px) {
   .featured__list__item {
     box-shadow: 0 10px 30px -15px var(--navy-shadow);
     transition: var(--transition);
   }
-
   .featured__list__item:hover, .featured__list__item:focus {
     box-shadow: 0 20px 30px -15px var(--navy-shadow);
   }
@@ -833,13 +838,11 @@ footer div {
 .featured__list__item:not(:last-of-type) {
   margin-bottom: 10rem;
 }
-
 @media (max-width: 768px) {
   .featured__list__item:not(:last-of-type) {
     margin-bottom: 7rem;
   }
 }
-
 @media (max-width: 480px) {
   .featured__list__item:not(:last-of-type) {
     margin-bottom: 3rem;
@@ -849,13 +852,11 @@ footer div {
   grid-column: 7/-1;
   text-align: right;
 }
-
 @media (max-width: 1080px) {
   .featured__list__item:nth-of-type(odd) .featured__list__item__content {
     grid-column: 5/-1;
   }
 }
-
 @media (max-width: 768px) {
   .featured__list__item:nth-of-type(odd) .featured__list__item__content {
     grid-column: 1/-1;
@@ -863,7 +864,6 @@ footer div {
     text-align: left;
   }
 }
-
 @media (max-width: 480px) {
   .featured__list__item:nth-of-type(odd) .featured__list__item__content {
     padding: 2.5rem 2.5rem 2rem;
@@ -872,7 +872,6 @@ footer div {
 .featured__list__item:nth-of-type(odd) .featured__list__item__content__tag-list {
   justify-content: flex-end;
 }
-
 @media (max-width: 768px) {
   .featured__list__item:nth-of-type(odd) .featured__list__item__content__tag-list {
     justify-content: flex-start;
@@ -881,7 +880,6 @@ footer div {
 .featured__list__item:nth-of-type(odd) .featured__list__item__content__tag-list li {
   margin: 0 0 0.5rem 2rem;
 }
-
 @media (max-width: 768px) {
   .featured__list__item:nth-of-type(odd) .featured__list__item__content__tag-list li {
     margin: 0 1rem 0.5rem 0;
@@ -892,7 +890,6 @@ footer div {
   margin-left: 0;
   margin-right: -1rem;
 }
-
 @media (max-width: 768px) {
   .featured__list__item:nth-of-type(odd) .featured__list__item__content__links {
     justify-content: flex-start;
@@ -903,7 +900,6 @@ footer div {
 .featured__list__item:nth-of-type(odd) .featured__list__item__image {
   grid-column: 1/8;
 }
-
 @media (max-width: 768px) {
   .featured__list__item:nth-of-type(odd) .featured__list__item__image {
     grid-column: 1/-1;
@@ -914,13 +910,11 @@ footer div {
   grid-column: 1/7;
   grid-row: 1/-1;
 }
-
 @media (max-width: 1080px) {
   .featured__list__item__content {
     grid-column: 1/9;
   }
 }
-
 @media (max-width: 768px) {
   .featured__list__item__content {
     display: flex;
@@ -932,7 +926,6 @@ footer div {
     z-index: 5;
   }
 }
-
 @media (max-width: 480px) {
   .featured__list__item__content {
     padding: 3rem 2.5rem 2rem;
@@ -956,7 +949,6 @@ footer div {
 .featured__list__item__image:hover, .featured__list__item__image:focus {
   box-shadow: 0 20px 30px -15px var(--navy-shadow);
 }
-
 @media (max-width: 768px) {
   .featured__list__item__image {
     grid-column: 1/-1;
@@ -1000,7 +992,6 @@ footer div {
   mix-blend-mode: multiply;
   filter: grayscale(100%) contrast(1) brightness(90%);
 }
-
 @media (max-width: 768px) {
   .featured__list__item__image__link__img {
     object-fit: cover;
@@ -1044,7 +1035,6 @@ footer div {
   grid-gap: 2rem;
   margin-top: 3rem;
 }
-
 @media (max-width: 1080px) {
   .projects__grid {
     grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
@@ -1111,22 +1101,18 @@ footer div {
   color: var(--lightest-slate);
   font-size: clamp(2.4rem, 5vw, 2.8rem);
 }
-
 @media (min-width: 768px) {
   .project__heading {
     margin: 0 0 20px;
   }
 }
-
 @media (max-width: 768px) {
   .project__heading {
     color: var(--white);
   }
-
   .project__heading a {
     position: static;
   }
-
   .project__heading a:before {
     content: "";
     display: block;
@@ -1152,14 +1138,12 @@ footer div {
 .project__description:hover, .project__description:focus {
   box-shadow: 0 20px 30px -15px var(--navy-shadow);
 }
-
 @media (max-width: 768px) {
   .project__description {
     padding: 2rem 0;
     background-color: transparent;
     box-shadow: none;
   }
-
   .project__description:hover {
     box-shadow: none;
   }
@@ -1209,12 +1193,10 @@ footer div {
   font-size: var(--fz-xs);
   white-space: nowrap;
 }
-
 @media (max-width: 768px) {
   .project__tags {
     margin: 1rem 0;
   }
-
   .project__tags li {
     margin: 0 1rem 0.5rem 0;
     color: var(--lightest-slate);
@@ -1268,14 +1250,80 @@ footer div {
 .contact__heading:after {
   display: none;
 }
+
 .contact__sub-heading {
   font-size: clamp(40px, 5vw, 60px);
   color: var(--lightest-slate);
   text-transform: capitalize;
 }
+
 .contact__form {
   padding: 1rem 6rem;
   width: 60%;
+}
+
+.page-404 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 10rem 15rem;
+  transform: translateY(8rem);
+}
+
+@media (max-width: 1080px) {
+  .page-404 {
+    padding: 0 10rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-404 {
+    padding: 0 5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-404 {
+    padding: 0 2.5rem;
+  }
+}
+
+.page-404__title {
+  color: var(--orange);
+  font-family: var(--font-mono);
+  font-size: clamp(10rem, 25vw, 20rem);
+  line-height: 1;
+  margin: 0 auto;
+}
+
+.page-404__subtitle {
+  font-size: clamp(3rem, 5vw, 5rem);
+  font-weight: 400;
+}
+
+.page-404__link {
+  color: var(--orange);
+  background-color: transparent;
+  border: 1px solid var(--orange);
+  border-radius: var(--border-radius);
+  padding: 1.25rem 1.75rem;
+  font-size: var(--fz-sm);
+  font-family: var(--font-mono);
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-top: 40px;
+}
+
+.page-404__link:hover, .page-404__link:focus, .page-404__link:active {
+  background-color: var(--orange-tint);
+  outline: none;
+}
+
+.page-404__link:after {
+  display: none !important;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -7,7 +7,7 @@ import Email from "./Sides/email";
 import {LayoutProps} from "./Interface";
 
 
-const Layout: React.FC<LayoutProps> = ({children, title}) => {
+const Layout: React.FC<LayoutProps> = ({children, isHome, title}) => {
     // const isHome = location.pathname === '/'
     /*if (isHome && isLoading) {
         return <Loader finishLoading={() => {
@@ -19,11 +19,11 @@ const Layout: React.FC<LayoutProps> = ({children, title}) => {
     return (
         <React.Fragment>
             <SEO title={title}/>
-            <NavBar isHome={true}/>
-            <Social isHome={true}/>
-            <Email isHome={true}/>
+            <NavBar isHome={isHome}/>
+            <Social isHome={isHome}/>
+            <Email isHome={isHome}/>
             <main>{children}</main>
-            <Footer/>
+            <Footer isHome={isHome}/>
         </React.Fragment>
     );
 };
