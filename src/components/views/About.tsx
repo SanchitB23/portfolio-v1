@@ -17,12 +17,16 @@ const About: React.FC = () => {
             <h1 className="section-heading">about me</h1>
             <div className="about-content">
                 <div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis consequatur ea eius esse,
-                        explicabo id iure molestiae, mollitia natus non odio pariatur possimus quia recusandae
-                        repudiandae tempora unde ut voluptate?</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet assumenda commodi corporis
-                        delectus fuga, in laboriosam magni molestias neque perspiciatis, quas quo repellat, repellendus
-                        sapiente soluta ullam voluptate. Amet, error!</p>
+                    <p>Hello! My name is Sanchit and I enjoy creating things that live on the internet. My interest in
+                        web development started back in 2016 when I tried building College Projects</p>
+                    <p>
+                        Fast-forward to today, and I've had the privilege of working at&nbsp;
+                        <a href="https://cherishx.com/">a start-up</a>, and&nbsp;
+                        <a href="https://newgensoft.com/">a huge corporation</a>.
+                        My main focus these days is building ReactJS Based Universal Payments portal for Tata Companies
+                        at&nbsp;<a href="https://www.tcs.com/">Tata Consultancy Services</a>.
+                    </p>
+                    <p>Here are a few technologies I've been working with recently:</p>
                     <ul className="skill-list">
                         {
                             data.map((tag: { name: string }, index: number) => (
@@ -33,7 +37,7 @@ const About: React.FC = () => {
                 </div>
                 <div className="photo">
                     <StaticImage
-                        src="../../resources/images/exclude/photo.jpg"
+                        src="../../resources/images/Me.jpg"
                         alt="photo"
                         layout="constrained"
                         placeholder="blurred"

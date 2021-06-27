@@ -8,7 +8,8 @@ const Contact: React.FC = () => {
             <h2 className="contact__sub-heading">Get in touch</h2>
             <div className="contact__form">
                 {/*// @ts-ignore*/}
-                <form action="https://formspree.io/f/mgerzonw" className="form" method="POST" netlify>
+                <form action="https://formspree.io/f/mgerzonw" className="form" method="POST" netlify
+                      name="contact-portfolio">
                     <div className="form__group">
                         <input type="text" name="_name" className="form__input" placeholder="Full name" id="name"
                                required/>
