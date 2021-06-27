@@ -4,7 +4,7 @@ import AllProjects from "./allProjects";
 import Icon from "../../icons/icons";
 import {iconNames} from "../../../config/constants";
 
-const Index = () => {
+const Index: React.FC = () => {
     return (
         <>
             <FeaturedProjects ProjectLinkIcons={ProjectLinkIcons}/>

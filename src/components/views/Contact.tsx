@@ -7,6 +7,7 @@ const Contact: React.FC = () => {
             <h1 className="section-heading contact__heading">what's next?</h1>
             <h2 className="contact__sub-heading">Get in touch</h2>
             <div className="contact__form">
+                {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
                 {/*// @ts-ignore*/}
                 <form action="https://formspree.io/f/mgerzonw" className="form" method="POST" netlify="true"
                       name="contact-portfolio">

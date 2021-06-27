@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
 
-const Archives = () => {
+const Archives: React.FC = () => {
     return (
         <StyledDiv>
             <h1>WIP</h1>

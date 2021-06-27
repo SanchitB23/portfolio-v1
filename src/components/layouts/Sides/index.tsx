@@ -43,7 +43,7 @@ const Side: React.FC<SideProps> = ({children, isHome, orientation}) => {
         }
         const timeout = setTimeout(() => setIsMounted(true), loaderDelay);
         return () => clearTimeout(timeout);
-    }, []);
+    }, [isHome, prefersReducedMotion]);
 
     return (
         <StyledSideElement orientation={orientation}>

@@ -6,7 +6,7 @@ import Icon from "../../icons/icons";
 
 
 const Social: React.FC<LayoutProps> = ({isHome}) => (
-    <Side isHome={isHome} orientation="left">
+    <Side isHome={isHome || true} orientation="left">
         <ul className="side-social">
             {socialMedia &&
             socialMedia.map(({url, name}, i) => (

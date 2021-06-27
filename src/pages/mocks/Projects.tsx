@@ -21,10 +21,9 @@ interface ProjectsDataType {
     }
 }
 
-const Projects = () => {
+const Projects: React.FC = () => {
     const data: ProjectsDataType = useStaticQuery(projectsQuery)
     const {allContentfulProjects: {nodes: projects}} = data;
-    console.log(projects)
     return (
         <section className="projects" id={navLinks[2]}>
             <h1 className="section-heading">Some Things I've Built</h1>
@@ -66,6 +65,7 @@ const Projects = () => {
                                 </div>
                                 <div className="projects__list__item__image">
                                     <a href={url[1] || url[0]}>
+                                        {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
                                         {/*@ts-ignore*/}
                                         <GatsbyImage image={cover} alt={title}
                                                      className="projects__list__item__image__img"/>

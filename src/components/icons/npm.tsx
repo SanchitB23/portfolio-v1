@@ -1,6 +1,6 @@
 import React from 'react';
 
-const IconNpm = () => {
+const IconNpm: React.FC = () => {
     return (
         <svg className="svg-npm" xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><title>Logo Npm</title>
             <path d='M227.6 213.1H256v57.1h-28.4z'/>

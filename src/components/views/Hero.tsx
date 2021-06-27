@@ -28,7 +28,7 @@ const five = (
 const items = [one, two, three, four, five];
 
 
-const Hero = () => {
+const Hero: React.FC = () => {
     const [isMounted, setIsMounted] = useState(false);
     const prefersReducedMotion = usePrefersReducedMotion();
 

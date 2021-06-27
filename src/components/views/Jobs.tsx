@@ -20,7 +20,7 @@ interface JobType {
     }
 }
 
-const Jobs = () => {
+const Jobs: React.FC = () => {
     const [activeTabId, setActiveTabId] = useState(0)
     /*GraphQL Query*/
     const data: JobType = useStaticQuery(jobsQuery)
@@ -28,6 +28,7 @@ const Jobs = () => {
     const revealSection = useRef(null);
 
     useEffect(() => {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         sr?.reveal(revealSection.current, srConfig())
     }, [])

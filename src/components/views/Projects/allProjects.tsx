@@ -23,10 +23,13 @@ const AllProjects: React.FC<ProjectComponentProps> = ({ProjectLinkIcons}) => {
 
 
     useEffect(() => {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         sr.reveal(revealTitle.current, srConfig());
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         sr?.reveal(revealArchiveLink.current, srConfig());
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         revealProjects.current.forEach((ref: Ref<HTMLElement>, i: number) => sr?.reveal(ref, srConfig(i * 100)));
     }, [])
@@ -50,6 +53,7 @@ const AllProjects: React.FC<ProjectComponentProps> = ({ProjectLinkIcons}) => {
                                     className="projects__grid__item"
                                     onClick={() => navigate(project.url[0])}
                                     ref={ref => {
+                                        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
                                         // @ts-ignore
                                         return (revealProjects.current[index] = ref)
                                     }}

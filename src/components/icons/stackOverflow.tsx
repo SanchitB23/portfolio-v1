@@ -1,6 +1,6 @@
 import React from 'react';
 
-const StackOverflow = () => {
+const StackOverflow: React.FC = () => {
     return (
         <svg width="100" height="118" viewBox="0 0 100 118" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M84.072 107.351V75.8H94.588V117.869H0V75.8H10.516V107.351H84.072Z" fill="#A8B2D1"/>

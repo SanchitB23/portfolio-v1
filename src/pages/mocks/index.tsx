@@ -1,8 +1,7 @@
 import React from 'react';
 
 
-const Test: React.FC = (props) => {
-    console.log(props)
+const Test: React.FC = () => {
 
     return (
         // <Loader finishLoading={(v) => console.log("finish loading", v)}/>

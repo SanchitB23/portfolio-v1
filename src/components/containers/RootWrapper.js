@@ -6,6 +6,7 @@ import '../../resources/sass/main.scss'
 import {ThemeProvider} from "styled-components";
 import theme from "../../resources/styles/theme";
 
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export const wrapRootElement = ({element}) => {
   return <ThemeProvider theme={theme}>
     <GlobalStyles/>

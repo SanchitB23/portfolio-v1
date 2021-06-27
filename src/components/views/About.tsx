@@ -9,6 +9,7 @@ const About: React.FC = () => {
     const revealSection = useRef(null);
 
     useEffect(() => {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         sr?.reveal(revealSection.current, srConfig())
     }, [])

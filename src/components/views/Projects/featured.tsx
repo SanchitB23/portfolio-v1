@@ -11,6 +11,7 @@ const FeaturedProjects: React.FC<ProjectComponentProps> = ({ProjectLinkIcons}) =
     const revealSection = useRef<HTMLElement>(null);
 
     useEffect(() => {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         sr?.reveal(revealSection.current, srConfig())
     }, [])
@@ -21,6 +22,7 @@ const FeaturedProjects: React.FC<ProjectComponentProps> = ({ProjectLinkIcons}) =
                 {
                     projects && projects.map((project, index) => {
                         const {tags, description, url, title, image} = project;
+                        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
                         // @ts-ignore
                         const cover = getImage(image)
                         return (
@@ -56,6 +58,7 @@ const FeaturedProjects: React.FC<ProjectComponentProps> = ({ProjectLinkIcons}) =
                                 </div>
                                 <div className="featured__list__item__image">
                                     <a href={url[1] || url[0]} className="featured__list__item__image__link">
+                                        {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
                                         {/*@ts-ignore*/}
                                         <GatsbyImage image={cover} alt={title}
                                                      className="featured__list__item__image__link__img"/>
