@@ -2,17 +2,38 @@
   @include flexBetween;
   position: fixed;
   top: 0;
-  left: 0;
+  z-index: 11;
+  padding: 0 5rem;
   width: 100%;
-  padding: 2rem 4rem 1rem;
-  backdrop-filter: blur(10px);
-  z-index: 100;
-  counter-reset: nav-item 0;
+  height: var(--nav-height);
+  background-color: rgba(10, 25, 47, 0.85);
+  filter: none !important;
+  pointer-events: auto !important;
+  user-select: auto !important;
+  backdrop-filter: blur(1rem);
+  transition: var(--transition);
 
-  svg {
-    height: 4.2rem;
-    width: 4.2rem;
-    fill: var(--orange);
+  @media (max-width: 1080px) {
+    padding: 0 4rem;
+  }
+  @media (max-width: 768px) {
+    padding: 0 2.5rem;
+  }
+
+  &__navigation {
+    @include flexBetween;
+    position: relative;
+    width: 100%;
+    color: var(--lightest-slate);
+    font-family: var(--font-mono);
+    counter-reset: item 0;
+    z-index: 12;
+
+    svg {
+      height: 4.2rem;
+      width: 4.2rem;
+      fill: var(--orange);
+    }
   }
 
   &__links {

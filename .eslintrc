@@ -17,6 +17,7 @@
     "no-warning-comments": "warn",
     "no-console": "warn",
     "no-inline-comments": "warn",
-    "multiline-comment-style": "warn"
+    "multiline-comment-style": "warn",
+    "@typescript-eslint/ban-ts-comment": "warn"
   }
 }
