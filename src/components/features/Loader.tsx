@@ -1,117 +1,34 @@
-import React from 'react';
-
-const Loader = () => {
-    return (
-        <div>
-            Loading
-        </div>
-    );
-};
-
-export default Loader;
-/*
 import React, {useEffect, useState} from 'react';
-import {Helmet} from 'react-helmet';
-import anime from 'animejs';
-import styled from 'styled-components';
-import {LogoLine} from "../../resources/icons/Logo";
-
-interface StyledLoaderProps {
-    isMounted: boolean
-}
+import {Helmet} from "react-helmet";
+import styled from "styled-components";
+import LogoLoader from "../icons/LogoLoader";
 
 interface LoaderProps {
     finishLoading: () => void
 }
 
-const StyledLoader = styled.div<StyledLoaderProps>`
-
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  background-color: var(--dark-navy);
-  z-index: 99;
-
-  .logo-wrapper {
-    width: max-content;
-    max-width: 100px;
-    transition: var(--transition);
-    opacity: ${props => (props.isMounted ? 1 : 0)};
-
-    svg {
-      display: block;
-      width: 100%;
-      height: 100%;
-      margin: 0 auto;
-      fill: none;
-      user-select: none;
-
-      #B {
-        opacity: 0;
-      }
-    }
-  }
-`;
-
 const Loader: React.FC<LoaderProps> = ({finishLoading}) => {
-    const [isMounted, setIsMounted] = useState(false);
-
-    const animate = () => {
-        const loader = anime.timeline({
-            complete: () => finishLoading(),
-        });
-
-        loader
-            .add({
-                targets: '#logo path',
-                delay: 300,
-                duration: 1500,
-                easing: 'easeInOutQuart',
-                strokeDashoffset: [anime.setDashoffset, 0],
-            })
-            .add({
-                targets: '#logo #B',
-                duration: 700,
-                easing: 'easeInOutQuart',
-                opacity: 1,
-            })
-            .add({
-                targets: '#logo',
-                delay: 500,
-                duration: 300,
-                easing: 'easeInOutQuart',
-                opacity: 0,
-                scale: 0.1,
-            })
-            .add({
-                targets: '.loader',
-                duration: 200,
-                easing: 'easeInOutQuart',
-                opacity: 0,
-                zIndex: -1,
-            });
-    };
+    const [isMounted, setIsMounted] = useState(false)
 
     useEffect(() => {
         const timeout = setTimeout(() => setIsMounted(true), 10);
-        animate();
-        return () => clearTimeout(timeout);
-    }, []);
+        const loaderAnimationTimeOut = setTimeout(() => finishLoading(), 3000)
+        return () => {
+            clearTimeout(timeout)
+            clearTimeout(loaderAnimationTimeOut)
+        };
+    }, [finishLoading])
 
     return (
-        <StyledLoader className="loader" isMounted={isMounted}>
+        <div className="loader">
             <Helmet bodyAttributes={{class: `hidden`}}/>
-
-            <div className="logo-wrapper">
-                <LogoLine/>
-            </div>
-        </StyledLoader>
+            <LogoWrapper className="loader__logo-wrapper" isMounted={isMounted}>
+                <LogoLoader/>
+            </LogoWrapper>
+        </div>
     );
 };
-
+const LogoWrapper = styled.div<{ isMounted: boolean }>`
+  opacity: ${({isMounted}) => (isMounted ? 1 : 0)};
+`
 export default Loader;
-*/

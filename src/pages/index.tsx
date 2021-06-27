@@ -5,11 +5,12 @@ import About from "../components/views/About";
 import Jobs from "../components/views/Jobs";
 import Projects from "../components/views/Projects";
 import Contact from "../components/views/Contact";
+import {PageProps} from "gatsby";
 
-//todo fix useEffect to CDM only
-const LandingPage = () => {
+const LandingPage: React.FC<PageProps> = ({location}) => {
+    console.log(location.hash.substring(1))
     return (
-        <Layout isHome title="Home">
+        <Layout location={location} title="Home">
             <Hero/>
             <About/>
             <Jobs/>

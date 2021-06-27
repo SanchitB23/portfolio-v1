@@ -1,0 +1,27 @@
+.loader {
+  @include flexCenter;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--dark-navy);
+  z-index: 99;
+
+  &__logo-wrapper {
+    @include flexCenter;
+    width: max-content;
+    max-width: 10rem;
+    transition: var(--transition);
+
+    svg {
+      display: block;
+      width: 100%;
+      margin: 0 auto;
+      user-select: none;
+      fill: var(--orange);
+    }
+  }
+}
