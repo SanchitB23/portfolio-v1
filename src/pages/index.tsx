@@ -9,7 +9,7 @@ import {PageProps} from "gatsby";
 
 const LandingPage: React.FC<PageProps> = ({location}) => {
     return (
-        <Layout location={location} title="Home">
+        <Layout location={location}>
             <Hero/>
             <About/>
             <Jobs/>

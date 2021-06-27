@@ -147,8 +147,4 @@ a {
   &.inline-link {
     @include inlink-link;
   }
-
-  &[target='_blank'] {
-    cursor: ne-resize;
-  }
 }

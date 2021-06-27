@@ -1,0 +1,16 @@
+.section-archives {
+  @include flexCenter;
+  flex-direction: column;
+  height: 100vh;
+  margin-top: 5rem;
+
+
+  h1 {
+    font-size: 8rem;
+    margin: 0;
+    font-weight: 700;
+    font-family: "SF Mono", monospace;
+    color: var(--orange);
+  }
+}
+

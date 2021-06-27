@@ -1,10 +1,10 @@
 .page-404 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flexCenter;
   flex-direction: column;
   padding: 10rem 15rem;
-  transform: translateY(8rem);
+  height: 100vh;
+  margin-top: 5rem;
+
   @media (max-width: 1080px) {
     padding: 0 10rem;
   }
