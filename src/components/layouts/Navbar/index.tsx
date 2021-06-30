@@ -7,6 +7,7 @@ import {loaderDelay} from "../../../config/utils";
 import {CSSTransition, TransitionGroup} from "react-transition-group";
 import useScrollDirection from "../../../config/hooks/useScrollDirection";
 import styled, {css} from "styled-components";
+import Hamburger from "./hamburger";
 
 const NavBar: React.FC<LayoutProps> = ({isHome}) => {
     const [isMounted, setIsMounted] = useState(false)
@@ -91,6 +92,13 @@ const NavBar: React.FC<LayoutProps> = ({isHome}) => {
                         )}
                     </TransitionGroup>
                 </div>
+                <TransitionGroup component={null}>
+                    {isMounted ? (
+                        <CSSTransition classNames={fadeClass} timeout={timeout}>
+                            <Hamburger/>
+                        </CSSTransition>
+                    ) : null}
+                </TransitionGroup>
             </nav>
         </StyledHeader>
     );

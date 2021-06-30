@@ -48,6 +48,10 @@ body {
   font-weight: 300;
   font-size: 2rem;
   font-family: var(--font-sans);
+
+  &.no-scroll {
+    overflow: hidden;
+  }
 }
 
 section {
