@@ -36,14 +36,16 @@ const About: React.FC = () => {
                         }
                     </ul>
                 </div>
-                <div className="photo">
-                    <StaticImage
-                        src="../../resources/images/Me.jpg"
-                        alt="photo"
-                        layout="constrained"
-                        placeholder="blurred"
-                        className="img"
-                    />
+                <div className="photo-wrapper">
+                    <div className="photo">
+                        <StaticImage
+                            src="../../resources/images/Me.jpg"
+                            alt="photo"
+                            layout="constrained"
+                            placeholder="blurred"
+                            className="img"
+                        />
+                    </div>
                 </div>
             </div>
         </section>

@@ -6,6 +6,23 @@
 
     grid-template-columns: 2fr 1fr;
     align-items: baseline;
+    @media (max-width: 768px) {
+      display: block;
+    }
+
+    p {
+      max-width: inherit;
+    }
+
+    .photo-wrapper {
+      position: relative;
+      max-width: 300px;
+
+      @media (max-width: 768px) {
+        margin: 50px auto 0;
+        width: 70%;
+      }
+    }
 
     .photo {
       display: block;

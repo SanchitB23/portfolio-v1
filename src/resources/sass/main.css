@@ -88,7 +88,6 @@ body {
     font-size: 2rem;
     font-family: var(--font-sans);
 }
-
 body.no-scroll {
     overflow: hidden;
 }
@@ -667,7 +666,9 @@ footer div {
   margin-bottom: 2rem;
 }
 .form__group {
-  width: 100%;
+    width: 100%;
+    min-width: 25rem;
+    max-width: 50rem;
 }
 .form__input {
   width: 100%;
@@ -734,8 +735,8 @@ footer div {
   transition: var(--transition);
 }
 .loader__logo-wrapper svg {
-  display: block;
-  width: 100%;
+    display: block;
+    width: 100%;
     margin: 0 auto;
     user-select: none;
     fill: var(--orange);
@@ -759,7 +760,6 @@ footer div {
         padding-bottom: 10vh;
     }
 }
-
 .hero__h1 {
     margin: 0 0 30px 4px;
     color: var(--orange);
@@ -773,17 +773,14 @@ footer div {
         margin: 0 0 20px 2px;
     }
 }
-
 .hero__h3 {
     margin-top: 10px;
     color: var(--slate);
     line-height: 0.9;
 }
-
 .hero__content:last-child {
     margin-top: 7rem;
 }
-
 .hero__email-link {
     padding: 2rem 3rem;
 }
@@ -798,16 +795,39 @@ footer div {
     align-items: baseline;
 }
 
-.about .about-content .photo {
-  display: block;
-  position: relative;
-  width: 100%;
-  border-radius: var(--border-radius);
-  background-color: var(--orange);
+@media (max-width: 768px) {
+    .about .about-content {
+        display: block;
+    }
 }
+
+.about .about-content p {
+    max-width: inherit;
+}
+
+.about .about-content .photo-wrapper {
+    position: relative;
+    max-width: 300px;
+}
+
+@media (max-width: 768px) {
+    .about .about-content .photo-wrapper {
+        margin: 50px auto 0;
+        width: 70%;
+    }
+}
+
+.about .about-content .photo {
+    display: block;
+    position: relative;
+    width: 100%;
+    border-radius: var(--border-radius);
+    background-color: var(--orange);
+}
+
 .about .about-content .photo:hover, .about .about-content .photo:focus {
-  background: transparent;
-  outline: 0;
+    background: transparent;
+    outline: 0;
 }
 .about .about-content .photo:hover:after, .about .about-content .photo:focus:after {
   top: 15px;
@@ -1536,8 +1556,8 @@ footer div {
   text-transform: capitalize;
 }
 .contact__form {
-  padding: 1rem 6rem;
-  width: 60%;
+    padding: 1rem 6rem;
+    width: 100%;
 }
 
 .page-404 {

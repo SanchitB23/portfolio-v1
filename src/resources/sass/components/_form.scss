@@ -9,6 +9,8 @@
 
   &__group {
     width: 100%;
+    min-width: 25rem;
+    max-width: 50rem;
   }
 
   &__input {
