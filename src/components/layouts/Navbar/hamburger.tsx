@@ -6,6 +6,7 @@ import {Helmet} from "react-helmet";
 const Hamburger: React.FC = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const toggleMenu = () => setIsMenuOpen(prevState => !prevState)
+    // @ts-ignore
     const onResize = e => {
         if (e.currentTarget.innerWidth > 768) {
             setIsMenuOpen(false);

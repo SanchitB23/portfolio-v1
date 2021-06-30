@@ -1,0 +1,41 @@
+.hero {
+  //margin-top: 5rem;
+  display: flex;
+  //justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 90vh;
+  padding: 0;
+
+  @media (max-width: 480px) and (min-height: 700px) {
+    padding-bottom: 10vh;
+  }
+
+  &__h1 {
+    margin: 0 0 30px 4px;
+    color: var(--orange);
+    font-family: var(--font-mono);
+    font-size: clamp(var(--fz-sm), 5vw, var(--fz-md));
+    font-weight: 400;
+
+    @media (max-width: 480px) {
+      margin: 0 0 20px 2px;
+    }
+  }
+
+  &__h3 {
+    margin-top: 10px;
+    color: var(--slate);
+    line-height: 0.9;
+  }
+
+  &__content {
+    &:last-child {
+      margin-top: 7rem;
+    }
+  }
+
+  &__email-link {
+    padding: 2rem 3rem;
+  }
+}

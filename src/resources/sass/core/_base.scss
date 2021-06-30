@@ -34,11 +34,11 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
   background-color: var(--dark-slate);
   border: 3px solid var(--navy);
-  border-radius: 10px;
+  border-radius: 1rem;
 }
 
 html {
-  font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
+  font-size: 62.5%; //1 rem = 1rem; 1rem/16px = 62.5%
 }
 
 body {
@@ -54,6 +54,25 @@ body {
   }
 }
 
+main {
+  counter-reset: section;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 160rem;
+  min-height: 100vh;
+  padding: 20rem 15rem;
+
+  @media (max-width: 108rem) {
+    padding: 20rem 10rem;
+  }
+  @media (max-width: 768px) {
+    padding: 15rem 5rem;
+  }
+  @media (max-width: 48rem) {
+    padding: 12.5rem 2.5rem;
+  }
+}
+
 section {
   margin: 0 auto;
   padding: 10rem 1rem;
@@ -63,14 +82,14 @@ section {
     padding: 8rem 1rem;
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: 48rem) {
     padding: 6rem 1rem;
   }
 }
 
 p {
-  margin: 20px 0 0;
-  max-width: 500px;
+  margin: 2rem 0 0;
+  max-width: 50rem;
   line-height: 2.5rem;
 
   a {
@@ -114,8 +133,8 @@ ul {
 
     li {
       position: relative;
-      padding-left: 30px;
-      margin-bottom: 10px;
+      padding-left: 3rem;
+      margin-bottom: 1rem;
 
       &:before {
         content: '▹';
@@ -129,10 +148,6 @@ ul {
 
 span {
   color: var(--orange);
-}
-
-main {
-  counter-reset: section;
 }
 
 a {
