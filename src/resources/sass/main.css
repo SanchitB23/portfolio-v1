@@ -504,6 +504,7 @@ footer div {
     transform: translate(-50%, -50%);
     list-style: none;
     text-align: center;
+    display: none;
 }
 .hamburger__nav__list__item {
     margin: 1rem;
@@ -554,11 +555,16 @@ footer div {
     opacity: 1;
     transform: scale(80);
 }
+
 .hamburger--open .hamburger__nav {
     opacity: 1;
     width: 100%;
     position: fixed;
     overflow: hidden;
+}
+
+.hamburger--open .hamburger__nav__list {
+    display: inherit;
 }
 
 .side-email {
@@ -788,7 +794,6 @@ footer div {
 .about {
     max-width: 90rem;
 }
-
 .about .about-content {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -800,11 +805,9 @@ footer div {
         display: block;
     }
 }
-
 .about .about-content p {
     max-width: inherit;
 }
-
 .about .about-content .photo-wrapper {
     position: relative;
     max-width: 300px;
@@ -816,7 +819,6 @@ footer div {
         width: 70%;
     }
 }
-
 .about .about-content .photo {
     display: block;
     position: relative;
@@ -824,7 +826,6 @@ footer div {
     border-radius: var(--border-radius);
     background-color: var(--orange);
 }
-
 .about .about-content .photo:hover, .about .about-content .photo:focus {
     background: transparent;
     outline: 0;

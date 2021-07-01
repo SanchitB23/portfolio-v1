@@ -159,6 +159,7 @@
 
       list-style: none;
       text-align: center;
+      display: none;
 
       &__item {
         margin: 1rem;
@@ -227,6 +228,10 @@
   }
 
   &--open &__nav {
+    &__list {
+      display: inherit;
+    }
+
     opacity: 1;
     width: 100%;
     position: fixed;
