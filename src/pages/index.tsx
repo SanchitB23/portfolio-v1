@@ -11,10 +11,6 @@ const LandingPage: React.FC<PageProps> = ({location}) => {
     return (
         <Layout location={location}>
             <Hero/>
-            <About/>
-            <Jobs/>
-            <Projects/>
-            <Contact/>
         </Layout>
     )
 }
