@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import SEO from "../helpers/SEO";
 import NavBar from "./Navbar";
-import Footer from "./Footer";
 import Social from "./Sides/social";
 import Email from "./Sides/email";
 import {LayoutProps} from "./Interface";
