@@ -5,6 +5,7 @@ import Social from "./Sides/social";
 import Email from "./Sides/email";
 import {LayoutProps} from "./Interface";
 import Loader from "../features/Loader";
+import Footer from "./Footer";
 
 
 const Layout: React.FC<LayoutProps> = ({children, title, location}) => {
@@ -30,7 +31,7 @@ const Layout: React.FC<LayoutProps> = ({children, title, location}) => {
                     <Social isHome={isHome}/>
                     <Email isHome={isHome}/>
                     <main>{children}</main>
-                    {/*<Footer isHome={isHome}/>*/}
+                    <Footer isHome={isHome}/>
                 </>
             )}
         </React.Fragment>

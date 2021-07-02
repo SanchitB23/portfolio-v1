@@ -4,7 +4,9 @@ import {LayoutProps} from "./Interface";
 const Footer: React.FC<LayoutProps> = ({isHome}) => {
     return (
         <footer className={isHome ? "" : "not-home"}>
-            <div>Theme by Brittany Chiang</div>
+            <div> &copy; {new Date().getFullYear()}, Built with
+                {` `}
+                <a href="https://www.gatsbyjs.org">Gatsby</a></div>
         </footer>
     );
 };

@@ -100,19 +100,16 @@ main {
   min-height: 100vh;
   padding: 0 15rem;
 }
-
 @media (max-width: 108rem) {
   main {
     padding: 20rem 10rem;
   }
 }
-
 @media (max-width: 768px) {
   main {
     padding: 15rem 5rem;
   }
 }
-
 @media (max-width: 48rem) {
   main {
     padding: 12.5rem 2.5rem;
@@ -124,13 +121,11 @@ section {
   padding: 10rem 1rem;
   max-width: 100rem;
 }
-
 @media (max-width: 768px) {
   section {
     padding: 8rem 1rem;
   }
 }
-
 @media (max-width: 48rem) {
   section {
     padding: 6rem 1rem;
@@ -393,7 +388,6 @@ footer div {
   align-items: center;
   justify-content: space-between;
 }
-
 @media (max-width: 768px) {
   .nav__links {
     display: none;
@@ -436,7 +430,6 @@ footer div {
 .hamburger {
   display: none;
 }
-
 @media (max-width: 768px) {
   .hamburger {
     display: block;
@@ -759,7 +752,6 @@ footer div {
   min-height: 100vh;
   padding: 0;
 }
-
 @media (max-width: 480px) and (min-height: 700px) {
   .hero {
     padding-bottom: 10vh;
@@ -772,7 +764,6 @@ footer div {
   font-size: clamp(var(--fz-sm), 5vw, var(--fz-md));
   font-weight: 400;
 }
-
 @media (max-width: 480px) {
   .hero__h1 {
     margin: 0 0 2rem 0.2rem;
@@ -798,7 +789,6 @@ footer div {
   grid-template-columns: 2fr 1fr;
   align-items: baseline;
 }
-
 @media (max-width: 768px) {
   .about .about-content {
     display: block;
@@ -811,7 +801,6 @@ footer div {
   position: relative;
   max-width: 300px;
 }
-
 @media (max-width: 768px) {
   .about .about-content .photo-wrapper {
     margin: 50px auto 0;
