@@ -2,10 +2,11 @@ import React, {useEffect, useRef} from 'react';
 import {graphql, useStaticQuery} from "gatsby";
 import {GatsbyImage, getImage} from "gatsby-plugin-image";
 import {navLinks} from "../../../config/constants";
-import {ProjectComponentProps, ProjectsDataType} from "./projectInterface";
+import {ProjectsDataType} from "./projectInterface";
 import sr, {srConfig} from "../../../config/utils/scrollReveal";
+import ProjectLinkIcons from "../../icons/ProjectLinkIcons";
 
-const FeaturedProjects: React.FC<ProjectComponentProps> = ({ProjectLinkIcons}) => {
+const FeaturedProjects: React.FC = () => {
     const data: ProjectsDataType = useStaticQuery(projectsQuery)
     const {allContentfulProjects: {nodes: projects}} = data;
     const revealSection = useRef<HTMLElement>(null);

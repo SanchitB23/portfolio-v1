@@ -1,12 +1,13 @@
 import React, {Ref, useEffect, useRef, useState} from 'react';
 import sr, {srConfig} from "../../../config/utils/scrollReveal";
 import {graphql, navigate, useStaticQuery} from "gatsby";
-import {ProjectComponentProps, ProjectsDataType} from "./projectInterface";
+import {ProjectsDataType} from "./projectInterface";
 import Icon from "../../icons/icons";
 import {iconNames} from "../../../config/constants";
 import {CSSTransition, TransitionGroup} from "react-transition-group";
+import ProjectLinkIcons from "../../icons/ProjectLinkIcons";
 
-const AllProjects: React.FC<ProjectComponentProps> = ({ProjectLinkIcons}) => {
+const AllProjects: React.FC = () => {
     const [showMore, setShowMore] = useState(false)
 
     const revealTitle = useRef(null);

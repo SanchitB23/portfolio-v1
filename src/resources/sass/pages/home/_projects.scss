@@ -380,6 +380,10 @@
           width: 3.5rem;
           fill: var(--lightest-slate);
           height: 3.5rem;
+
+          &:hover {
+            fill: var(--orange);
+          }
         }
       }
     }
