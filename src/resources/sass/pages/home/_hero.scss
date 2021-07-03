@@ -1,10 +1,10 @@
 .hero {
   //margin-top: 5rem;
   display: flex;
-  //justify-content: center;
+  justify-content: center;
   flex-direction: column;
   align-items: flex-start;
-  min-height: 90vh;
+  min-height: 100vh;
   padding: 0;
 
   @media (max-width: 480px) and (min-height: 700px) {
@@ -12,26 +12,26 @@
   }
 
   &__h1 {
-    margin: 0 0 30px 4px;
+    margin: 0 0 3rem .4rem;
     color: var(--orange);
     font-family: var(--font-mono);
     font-size: clamp(var(--fz-sm), 5vw, var(--fz-md));
     font-weight: 400;
 
     @media (max-width: 480px) {
-      margin: 0 0 20px 2px;
+      margin: 0 0 2rem .2rem;
     }
   }
 
   &__h3 {
-    margin-top: 10px;
+    margin-top: 1rem;
     color: var(--slate);
     line-height: 0.9;
   }
 
   &__content {
     &:last-child {
-      margin-top: 7rem;
+      margin-top: 4rem;
     }
   }
 
