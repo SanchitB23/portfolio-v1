@@ -12,7 +12,7 @@ interface ArchiveProps {
                 {
                     url: string[],
                     title: string,
-                    year: Date,
+                    projectCreatedOn: string
                     tags: [{
                         name: string
                     }]
@@ -56,11 +56,11 @@ const Archives: React.FC<ArchiveProps> = ({data}) => {
                         </tr>
                         </thead>
                         <tbody className="table__body">
-                        {projects.length && projects.map(({url, title, tags, ...project}, index) => {
+                        {projects.length && projects.map(({url, title, tags, projectCreatedOn}, index) => {
                             return (
                                 // @ts-ignore
                                 <tr key={index} ref={el => (revealProjects.current[index] = el)}>
-                                    <td className="table__body__year">{project.year || 2020}</td>
+                                    <td className="table__body__year">{projectCreatedOn}</td>
                                     <td className="table__body__title">{title}</td>
                                     <td className="table__body__tags table-wrapper__hide-on-mobile">
                                         {tags.map((item, i) => (
@@ -98,11 +98,11 @@ const Archives: React.FC<ArchiveProps> = ({data}) => {
 
 export const query = graphql`
     {
-        allContentfulProjects(sort: {order: DESC, fields: createdAt}) {
+        allContentfulProjects(sort: {fields: projectCreatedOn, order: DESC}) {
             nodes {
                 url
                 title
-                #                year
+                projectCreatedOn(formatString: "YYYY")
                 tags {
                     name
                 }
