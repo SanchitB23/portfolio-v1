@@ -73,8 +73,7 @@ const NavBar: React.FC<LayoutProps> = ({isHome}) => {
                                     <li className="nav__links__item" key={index}
                                         style={{transitionDelay: `${isHome ? index * 100 : 0}ms`}}>
                                         <Link
-                                            to={`#${link}`}
-
+                                            to={`/#${link}`}
                                         >{link}</Link>
                                     </li>
                                 </CSSTransition>
