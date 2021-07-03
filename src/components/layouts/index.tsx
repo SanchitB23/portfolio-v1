@@ -30,7 +30,7 @@ const Layout: React.FC<LayoutProps> = ({children, title, location}) => {
                     <NavBar isHome={isHome}/>
                     <Social isHome={isHome}/>
                     <Email isHome={isHome}/>
-                    <main>{children}</main>
+                    <main className={isHome ? "main" : ""}>{children}</main>
                     <Footer isHome={isHome}/>
                 </>
             )}
