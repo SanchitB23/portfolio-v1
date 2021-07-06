@@ -34,7 +34,7 @@ const Hamburger: React.FC = () => {
                     {navLinks && navLinks.map((link, index) => (
                         <li className="hamburger__nav__list__item" key={index}>
                             <Link
-                                to={`#${link}`}
+                                to={`/#${link}`}
                                 className="hamburger__nav__list__item__link"
                                 onClick={toggleMenu}
                             >{link}</Link>

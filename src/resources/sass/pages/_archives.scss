@@ -1,16 +1,148 @@
 .section-archives {
-  @include flexCenter;
-  flex-direction: column;
-  height: 100vh;
-  margin-top: 5rem;
+  min-height: 100vh;
+  padding: 20rem 15rem;
+  max-width: 1600px;
 
+  header {
+    span {
+      font-family: "SF Mono", monospace;
+      font-size: 1.6rem;
+      font-weight: 400;
+    }
+  }
 
-  h1 {
-    font-size: 8rem;
-    margin: 0;
-    font-weight: 700;
-    font-family: "SF Mono", monospace;
-    color: var(--orange);
+  .table-wrapper {
+    width: 100%;
+    margin-top: 10rem;
+
+    &__hide-on-mobile {
+      @media (max-width: 768px) {
+        display: none;
+      }
+    }
+
+    .table {
+      width: inherit;
+      border-collapse: collapse;
+
+      th,
+      td {
+        padding: 1rem;
+        text-align: left;
+        text-transform: capitalize;
+
+        &:first-child {
+          padding-left: 2rem;
+
+          @media (max-width: 768px) {
+            padding-left: 1rem;
+          }
+        }
+
+        &:last-child {
+          padding-right: 20px;
+
+          @media (max-width: 768px) {
+            padding-right: 10px;
+          }
+        }
+      }
+
+      tr {
+        cursor: default;
+
+        td:first-child {
+          border-top-left-radius: var(--border-radius);
+          border-bottom-left-radius: var(--border-radius);
+        }
+
+        td:last-child {
+          border-top-right-radius: var(--border-radius);
+          border-bottom-right-radius: var(--border-radius);
+        }
+      }
+
+      &__header th {
+        font-size: 2rem;
+      }
+
+      &__body {
+        tr {
+          &:hover,
+          &:focus {
+            background-color: var(--light-navy);
+          }
+        }
+
+        &__year {
+          color: var(--orange);
+          font-family: "SF Mono", monospace;
+          padding-right: 2rem;
+          font-size: 1.6rem;
+
+          @media (max-width: 768px) {
+            padding-right: 1rem;
+            font-size: var(--fz-sm);
+          }
+        }
+
+        &__title {
+          padding-top: 15px;
+          padding-right: 20px;
+          color: var(--lightest-slate);
+          font-size: var(--fz-xl);
+          font-weight: 600;
+          line-height: 1.25;
+        }
+
+        &__tags {
+          font-size: var(--fz-xxs);
+          font-family: var(--font-mono);
+          line-height: 1.5;
+
+          .separator {
+            margin: 0 5px;
+          }
+
+          span {
+            display: inline-block;
+          }
+        }
+
+        &__urls {
+          min-width: 10rem;
+
+          svg {
+            width: 2rem;
+            height: 2rem;
+
+            &.svg-npm {
+              width: 3.5rem;
+              fill: var(--light-slate);
+              height: 3.5rem;
+
+              &:hover {
+                fill: var(--orange);
+              }
+            }
+          }
+
+          div {
+            display: flex;
+            align-items: center;
+
+            a {
+              @include flexCenter;
+              flex-shrink: 0;
+            }
+
+            a + a {
+              margin-left: 1rem;
+            }
+          }
+        }
+      }
+    }
   }
 }
 

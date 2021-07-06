@@ -16,6 +16,3 @@ export interface ProjectsDataType {
     }
 }
 
-export interface ProjectComponentProps {
-    ProjectLinkIcons: JSX.Element[]
-}
