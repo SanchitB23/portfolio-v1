@@ -224,7 +224,7 @@
       transition: var(--transition);
 
       &:hover {
-        cursor: pointer;
+        cursor: alias;
         transform: translateY(-.7rem);
 
         h3 {

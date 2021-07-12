@@ -6,7 +6,7 @@ const Footer: React.FC<LayoutProps> = ({isHome}) => {
         <footer className={isHome ? "" : "not-home"}>
             <div> &copy; {new Date().getFullYear()}, Built with
                 {` `}
-                <a href="https://www.gatsbyjs.org">Gatsby</a></div>
+                <a href="https://www.gatsbyjs.org" target="_blank">Gatsby</a></div>
         </footer>
     );
 };

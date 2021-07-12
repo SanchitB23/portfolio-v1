@@ -12,7 +12,7 @@ const four = (
     <p>
         I'm a New Delhi-based software engineer who specializes in building (and occasionally designing)
         exceptional digital experiences. Currently, I'm an engineer at{' '}
-        <a href="/" target="_blank" rel="noreferrer">
+        <a href="https://www.tcs.com/" target="_blank" rel="noreferrer">
             Tata Consultancy Services
         </a>{' '}
         focused on building Progressive Web Apps on ReactJS

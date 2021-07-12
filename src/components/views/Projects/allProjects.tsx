@@ -1,6 +1,6 @@
 import React, {Ref, useEffect, useRef, useState} from 'react';
 import sr, {srConfig} from "../../../config/utils/scrollReveal";
-import {graphql, navigate, useStaticQuery} from "gatsby";
+import {graphql, useStaticQuery} from "gatsby";
 import {ProjectsDataType} from "./projectInterface";
 import Icon from "../../icons/icons";
 import {iconNames} from "../../../config/constants";
@@ -52,7 +52,6 @@ const AllProjects: React.FC = () => {
                                 exit={false}>
                                 <li
                                     className="projects__grid__item"
-                                    onClick={() => navigate(project.url[0])}
                                     ref={ref => {
                                         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
                                         // @ts-ignore
@@ -67,7 +66,7 @@ const AllProjects: React.FC = () => {
                                             <ul>
                                                 {project.url ? project.url.map((url, index) => (
                                                     <li key={index}>
-                                                        <a href={url}>
+                                                        <a href={url} target="_blank">
                                                             {ProjectLinkIcons[index]}
                                                         </a>
                                                     </li>
@@ -86,7 +85,6 @@ const AllProjects: React.FC = () => {
                             </CSSTransition>
                         )) : null
                     }
-
                 </TransitionGroup>
             </ul>
             <button className="btn" onClick={() => setShowMore(!showMore)}>
