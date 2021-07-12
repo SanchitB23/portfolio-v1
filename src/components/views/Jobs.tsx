@@ -134,4 +134,3 @@ const jobsQuery = graphql`
 `
 
 export default Jobs;
-
