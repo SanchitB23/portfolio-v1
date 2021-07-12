@@ -78,6 +78,7 @@ const Archives: React.FC<ArchiveProps> = ({data}) => {
                                             {url.map((link, index) => {
                                                 return (
                                                     <a href={link}
+                                                       target="_blank"
                                                        className={index == 2 ? "table__body__urls__npm" : ""}>
                                                         {ProjectLinkIcons[index]}
                                                     </a>

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import SEO from "../helpers/SEO";
 import NavBar from "./Navbar";
 import Social from "./Sides/social";
@@ -11,14 +11,33 @@ import Footer from "./Footer";
 const Layout: React.FC<LayoutProps> = ({children, title, location}) => {
     const isHome = location?.pathname === '/'
     const [isLoading, setIsLoading] = useState(true)
-    /*
-     *if (isHome && isLoading) {
-     *  return <Loader finishLoading={() => {
-     *      return setIsLoading(false)
-     *  }}/>
-     *
-     *}
-     */
+
+    // Sets rel="noopener noreferrer" on external links
+    const handleExternalLinks = () => {
+        const allLinks = Array.from(document.querySelectorAll('a'));
+        if (allLinks.length > 0) {
+            allLinks.forEach(link => {
+                if (link.host !== window.location.host) {
+                    link.setAttribute('rel', 'noopener noreferrer');
+                }
+            });
+        }
+    };
+
+    useEffect(() => {
+        if (isLoading) return
+        if (location?.hash) {
+            const id = location.hash.substring(1)
+            setTimeout(() => {
+                const el = document.getElementById(id)
+                if (el) {
+                    el.scrollIntoView()
+                    el.focus()
+                }
+            }, 0)
+        }
+        handleExternalLinks()
+    }, [isLoading, location?.hash])
 
     return (
         <React.Fragment>

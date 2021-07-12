@@ -78,8 +78,10 @@ const Jobs: React.FC = () => {
                                             <span>
                                                  &nbsp;@&nbsp;
                                                 <a href={url}
+                                                   target="_blank"
                                                    className="tab-panels__item__company--short">{companyShort || company}</a>
-                                                <a href={url} className="tab-panels__item__company--long">{company}</a>
+                                                <a href={url} target="_blank"
+                                                   className="tab-panels__item__company--long">{company}</a>
                                             </span>
                                         </h3>
                                         <p className="tab-panels__item__range">{dateRange}</p>
@@ -132,4 +134,3 @@ const jobsQuery = graphql`
 `
 
 export default Jobs;
-
