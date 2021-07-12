@@ -3,6 +3,7 @@ import {socialMedia} from '../../../config/constants';
 import Side from './index';
 import {LayoutProps} from "../Interface";
 import Icon from "../../icons/icons";
+import {OutboundLink} from "gatsby-plugin-google-gtag";
 
 
 const Social: React.FC<LayoutProps> = ({isHome}) => (
@@ -11,9 +12,9 @@ const Social: React.FC<LayoutProps> = ({isHome}) => (
             {socialMedia &&
             socialMedia.map(({url, name}, i) => (
                 <li key={i}>
-                    <a href={url} aria-label={name} target="_blank" rel="noreferrer">
+                    <OutboundLink href={url} aria-label={name} target="_blank" rel="noreferrer">
                         <Icon name={name}/>
-                    </a>
+                    </OutboundLink>
                 </li>
             ))}
         </ul>
