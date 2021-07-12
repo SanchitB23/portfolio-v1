@@ -3,6 +3,7 @@ import {CSSTransition, TransitionGroup} from 'react-transition-group';
 import {email} from "../../config/constants";
 import {loaderDelay, navDelay} from "../../config/utils";
 import {usePrefersReducedMotion} from "../../config/hooks";
+import {OutboundLink} from "gatsby-plugin-google-gtag";
 
 
 const one = <h1 className="hero__h1">Hi, my name is</h1>;
@@ -12,16 +13,16 @@ const four = (
     <p>
         I'm a New Delhi-based software engineer who specializes in building (and occasionally designing)
         exceptional digital experiences. Currently, I'm an engineer at{' '}
-        <a href="/" target="_blank" rel="noreferrer">
+        <OutboundLink href="https://www.tcs.com/" target="_blank" rel="noreferrer">
             Tata Consultancy Services
-        </a>{' '}
+        </OutboundLink>{' '}
         focused on building Progressive Web Apps on ReactJS
     </p>
 );
 const five = (
-    <a href={`mailto:${email}`} className="btn hero__email-link">
+    <OutboundLink href={`mailto:${email}`} className="btn hero__email-link">
         Get In Touch
-    </a>
+    </OutboundLink>
 );
 
 const items = [one, two, three, four, five];

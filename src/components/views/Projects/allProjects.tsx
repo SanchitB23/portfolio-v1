@@ -1,11 +1,12 @@
 import React, {Ref, useEffect, useRef, useState} from 'react';
 import sr, {srConfig} from "../../../config/utils/scrollReveal";
-import {graphql, navigate, useStaticQuery} from "gatsby";
+import {graphql, useStaticQuery} from "gatsby";
 import {ProjectsDataType} from "./projectInterface";
 import Icon from "../../icons/icons";
 import {iconNames} from "../../../config/constants";
 import {CSSTransition, TransitionGroup} from "react-transition-group";
 import ProjectLinkIcons from "../../icons/ProjectLinkIcons";
+import {OutboundLink} from "gatsby-plugin-google-gtag";
 
 const AllProjects: React.FC = () => {
     const [showMore, setShowMore] = useState(false)
@@ -39,7 +40,7 @@ const AllProjects: React.FC = () => {
         <section className="projects">
             <div className="projects__header">
                 <h2 ref={revealTitle}>Other Noteworthy Projects</h2>
-                <p><a href={"/archives"} ref={revealArchiveLink}>view archive</a></p>
+                <p><OutboundLink href={"/archives"} ref={revealArchiveLink}>view archive</OutboundLink></p>
             </div>
             <ul className="projects__grid">
                 <TransitionGroup component={null}>
@@ -52,7 +53,6 @@ const AllProjects: React.FC = () => {
                                 exit={false}>
                                 <li
                                     className="projects__grid__item"
-                                    onClick={() => navigate(project.url[0])}
                                     ref={ref => {
                                         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
                                         // @ts-ignore
@@ -67,9 +67,9 @@ const AllProjects: React.FC = () => {
                                             <ul>
                                                 {project.url ? project.url.map((url, index) => (
                                                     <li key={index}>
-                                                        <a href={url}>
+                                                        <OutboundLink href={url} target="_blank">
                                                             {ProjectLinkIcons[index]}
-                                                        </a>
+                                                        </OutboundLink>
                                                     </li>
                                                 )) : null}
                                             </ul>
@@ -86,7 +86,6 @@ const AllProjects: React.FC = () => {
                             </CSSTransition>
                         )) : null
                     }
-
                 </TransitionGroup>
             </ul>
             <button className="btn" onClick={() => setShowMore(!showMore)}>

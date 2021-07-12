@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {Link} from "gatsby";
 import {navLinks} from "../../../config/constants";
 import {Helmet} from "react-helmet";
+import {OutboundLink} from "gatsby-plugin-google-gtag";
 
 const Hamburger: React.FC = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -47,8 +48,8 @@ const Hamburger: React.FC = () => {
     );
 };
 const ResumeLink = (
-    <a className="btn hamburger__nav__resume" href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+    <OutboundLink className="btn hamburger__nav__resume" href="/resume.pdf" target="_blank" rel="noopener noreferrer">
         Resume
-    </a>
+    </OutboundLink>
 );
 export default Hamburger;

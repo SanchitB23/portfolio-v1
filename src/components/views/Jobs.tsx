@@ -4,6 +4,7 @@ import styled from "styled-components";
 import {CSSTransition} from "react-transition-group";
 import sr, {srConfig} from "../../config/utils/scrollReveal";
 import {navLinks} from "../../config/constants";
+import {OutboundLink} from "gatsby-plugin-google-gtag";
 
 interface JobType {
     allContentfulJobs: {
@@ -77,9 +78,11 @@ const Jobs: React.FC = () => {
                                             {title}
                                             <span>
                                                  &nbsp;@&nbsp;
-                                                <a href={url}
-                                                   className="tab-panels__item__company--short">{companyShort || company}</a>
-                                                <a href={url} className="tab-panels__item__company--long">{company}</a>
+                                                <OutboundLink href={url}
+                                                              target="_blank"
+                                                              className="tab-panels__item__company--short">{companyShort || company}</OutboundLink>
+                                                <OutboundLink href={url} target="_blank"
+                                                              className="tab-panels__item__company--long">{company}</OutboundLink>
                                             </span>
                                         </h3>
                                         <p className="tab-panels__item__range">{dateRange}</p>
@@ -132,4 +135,3 @@ const jobsQuery = graphql`
 `
 
 export default Jobs;
-

@@ -8,6 +8,7 @@ import {CSSTransition, TransitionGroup} from "react-transition-group";
 import useScrollDirection from "../../../config/hooks/useScrollDirection";
 import styled, {css} from "styled-components";
 import Hamburger from "./hamburger";
+import {OutboundLink} from "gatsby-plugin-google-gtag";
 
 const NavBar: React.FC<LayoutProps> = ({isHome}) => {
     const [isMounted, setIsMounted] = useState(false)
@@ -49,9 +50,9 @@ const NavBar: React.FC<LayoutProps> = ({isHome}) => {
     );
 
     const ResumeLink = (
-        <a className="btn" href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+        <OutboundLink className="btn" href="/resume.pdf" target="_blank" rel="noopener noreferrer">
             Resume
-        </a>
+        </OutboundLink>
     );
 
     return (

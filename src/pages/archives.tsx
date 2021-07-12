@@ -4,6 +4,7 @@ import {graphql} from "gatsby";
 import {Helmet} from "react-helmet";
 import ProjectLinkIcons from "../components/icons/ProjectLinkIcons";
 import sr, {srConfig} from "../config/utils/scrollReveal";
+import {OutboundLink} from "gatsby-plugin-google-gtag";
 
 interface ArchiveProps {
     data: {
@@ -77,10 +78,11 @@ const Archives: React.FC<ArchiveProps> = ({data}) => {
                                         <div>
                                             {url.map((link, index) => {
                                                 return (
-                                                    <a href={link}
-                                                       className={index == 2 ? "table__body__urls__npm" : ""}>
+                                                    <OutboundLink href={link}
+                                                                  target="_blank"
+                                                                  className={index == 2 ? "table__body__urls__npm" : ""}>
                                                         {ProjectLinkIcons[index]}
-                                                    </a>
+                                                    </OutboundLink>
                                                 )
                                             })}
                                         </div>
