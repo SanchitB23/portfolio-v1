@@ -61,7 +61,7 @@ const AllProjects: React.FC = () => {
                                     style={{
                                         transitionDelay: `${index >= GRID_LIMIT ? (index - GRID_LIMIT) * 100 : 0}ms`,
                                     }}>
-                                    <div>
+                                    <div style={{width: "100%"}}>
                                         <header>
                                             <Icon name={iconNames.Folder}/>
                                             <ul>
