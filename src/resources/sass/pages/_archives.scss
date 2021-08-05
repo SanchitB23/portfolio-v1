@@ -2,6 +2,9 @@
   min-height: 100vh;
   padding: 20rem 15rem;
   max-width: 1600px;
+  @media (max-width: 768px) {
+    padding: 10rem 5rem 20rem;
+  }
 
   header {
     span {
@@ -14,6 +17,9 @@
   .table-wrapper {
     width: 100%;
     margin-top: 10rem;
+    @media (max-width: 768px) {
+      margin-top: 5rem;
+    }
 
     &__hide-on-mobile {
       @media (max-width: 768px) {
