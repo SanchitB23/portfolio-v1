@@ -210,7 +210,6 @@
     margin-top: 3rem;
     @media (max-width: 1080px) {
       grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
-
     }
 
     &__item {
@@ -219,6 +218,7 @@
       align-items: flex-start;
 
       height: 100%;
+      width: 100%;
       background-color: var(--light-navy);
       padding: 2rem 1.75rem;
       transition: var(--transition);
@@ -236,6 +236,7 @@
         @include flexBetween;
         margin-bottom: 2rem;
         align-items: flex-end;
+        width: 100%;
 
         & > svg {
           height: 4rem;

@@ -100,22 +100,19 @@ body.no-scroll {
   min-height: 100vh;
   padding: 0 15rem;
 }
-
 @media (max-width: 1080px) {
   .main {
-    padding: 20rem 10rem;
+    padding: 0 10rem 20rem;
   }
 }
-
 @media (max-width: 768px) {
   .main {
-    padding: 15rem 5rem;
+    padding: 0 5rem 15rem;
   }
 }
-
 @media (max-width: 480px) {
   .main {
-    padding: 12.5rem 2.5rem;
+    padding: 0 2.5rem 12.5rem;
   }
 }
 
@@ -124,13 +121,11 @@ section {
   padding: 10rem 1rem;
   max-width: 100rem;
 }
-
 @media (max-width: 768px) {
   section {
     padding: 8rem 1rem;
   }
 }
-
 @media (max-width: 480px) {
   section {
     padding: 6rem 1rem;
@@ -1341,6 +1336,7 @@ footer div {
   flex-direction: column;
   align-items: flex-start;
   height: 100%;
+  width: 100%;
   background-color: var(--light-navy);
   padding: 2rem 1.75rem;
   transition: var(--transition);
@@ -1358,6 +1354,7 @@ footer div {
   justify-content: space-between;
   margin-bottom: 2rem;
   align-items: flex-end;
+  width: 100%;
 }
 .projects__grid__item header > svg {
   height: 4rem;
@@ -1619,6 +1616,11 @@ footer div {
   padding: 20rem 15rem;
   max-width: 1600px;
 }
+@media (max-width: 768px) {
+  .section-archives {
+    padding: 10rem 2rem 20rem;
+  }
+}
 .section-archives header span {
   font-family: "SF Mono", monospace;
   font-size: 1.6rem;
@@ -1628,7 +1630,11 @@ footer div {
   width: 100%;
   margin-top: 10rem;
 }
-
+@media (max-width: 768px) {
+  .section-archives .table-wrapper {
+    margin-top: 5rem;
+  }
+}
 @media (max-width: 768px) {
   .section-archives .table-wrapper__hide-on-mobile {
     display: none;
@@ -1648,10 +1654,9 @@ footer div {
 .section-archives .table-wrapper .table td:first-child {
   padding-left: 2rem;
 }
-
 @media (max-width: 768px) {
   .section-archives .table-wrapper .table th:first-child,
-  .section-archives .table-wrapper .table td:first-child {
+.section-archives .table-wrapper .table td:first-child {
     padding-left: 1rem;
   }
 }
@@ -1659,10 +1664,9 @@ footer div {
 .section-archives .table-wrapper .table td:last-child {
   padding-right: 20px;
 }
-
 @media (max-width: 768px) {
   .section-archives .table-wrapper .table th:last-child,
-  .section-archives .table-wrapper .table td:last-child {
+.section-archives .table-wrapper .table td:last-child {
     padding-right: 10px;
   }
 }
@@ -1689,7 +1693,6 @@ footer div {
   padding-right: 2rem;
   font-size: 1.6rem;
 }
-
 @media (max-width: 768px) {
   .section-archives .table-wrapper .table__body__year {
     padding-right: 1rem;
