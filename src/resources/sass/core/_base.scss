@@ -38,7 +38,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 html {
-  font-size: 62.5%; //1 rem = 1rem; 1rem/16px = 62.5%
+  font-size: 62.5%; //1 rem = 10px; 1rem/16px = 62.5%
 }
 
 body {
@@ -63,13 +63,16 @@ body {
   padding: 0 15rem;
 
   @media (max-width: 1080px) {
-    padding: 20rem 10rem;
+    //padding: 20rem 10rem;
+    padding: 0 10rem 20rem;
   }
   @media (max-width: 768px) {
-    padding: 15rem 5rem;
+    //padding: 15rem 5rem;
+    padding: 0 5rem 15rem;
   }
   @media (max-width: 480px) {
-    padding: 12.5rem 2.5rem;
+    //padding: 12.5rem 2.5rem;
+    padding: 0 2.5rem 12.5rem;
   }
 }
 
