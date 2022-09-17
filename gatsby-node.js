@@ -6,8 +6,8 @@
  * https://www.gatsbyjs.com/docs/how-to/custom-configuration/add-custom-webpack-config/
  */
 
-exports.onCreateWebpackConfig = ({stage, loaders, actions}) => {
-  if (stage === 'build-html' || stage === 'develop-html') {
+exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
+  if (stage === "build-html" || stage === "develop-html") {
     actions.setWebpackConfig({
       module: {
         rules: [
@@ -27,4 +27,10 @@ exports.onCreateWebpackConfig = ({stage, loaders, actions}) => {
       },
     });
   }
-}
+};
+
+exports.onCreatePage = async ({ page, actions: { deletePage } }) => {
+  if (process.env.NODE_ENV !== "development" && page.path.match(/^\/mocks/)) {
+    deletePage(page);
+  }
+};

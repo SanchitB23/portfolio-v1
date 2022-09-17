@@ -8,6 +8,7 @@ import Contact from "../components/views/Contact";
 import {PageProps} from "gatsby";
 
 const LandingPage: React.FC<PageProps> = ({location}) => {
+    console.log(process.env.NODE_ENV )
     return (
         <Layout location={location}>
             <Hero/>
