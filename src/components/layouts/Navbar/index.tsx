@@ -11,12 +11,10 @@ import Hamburger from "./hamburger";
 import {OutboundLink} from "gatsby-plugin-google-gtag";
 
 interface ResumeURLInterfaceObj {
-    allContentfulAboutMe: {
+    allContentfulAsset: {
         nodes: [{
-            resume: {
-                file: {
-                    url: string
-                }
+            file: {
+                url: string
             }
         }]
     }
@@ -26,8 +24,8 @@ const NavBar: React.FC<LayoutProps> = ({isHome}) => {
     const [isMounted, setIsMounted] = useState(false)
     const [scrolledToTop, setScrolledToTop] = useState(true);
     const data: ResumeURLInterfaceObj = useStaticQuery(query)
-    const {allContentfulAboutMe: {nodes}} = data;
-    const {resume: {file: {url}}} = nodes[0];
+    const {allContentfulAsset: {nodes}} = data;
+    const  {file: {url}} = nodes[0];
     // @ts-ignore
     const scrollDirection: string = useScrollDirection('down');
 
@@ -141,17 +139,17 @@ const StyledHeader = styled.header<{ scrollDirection: string, scrolledToTop: boo
   }
 `
 
-const query = graphql`
+export const query = graphql`
     {
-        allContentfulAboutMe {
+        allContentfulAsset(filter: {title: {eq: "ResumeFile"}}) {
             nodes {
-                resume {
-                    file {
-                        url
-                    }
+                file {
+                    url
                 }
             }
         }
     }
 `
+
+
 export default NavBar;
