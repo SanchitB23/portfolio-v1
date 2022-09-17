@@ -28,3 +28,9 @@ exports.onCreateWebpackConfig = ({stage, loaders, actions}) => {
     });
   }
 }
+
+exports.onCreatePage = async ({page, actions: {deletePage}}) => {
+  if (process.env.NODE_ENV !== "development" && page.path.match(/^\/mocks/)) {
+    deletePage(page)
+  }
+}
