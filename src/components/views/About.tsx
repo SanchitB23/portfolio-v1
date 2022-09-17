@@ -3,10 +3,31 @@ import {StaticImage} from "gatsby-plugin-image";
 import {graphql, useStaticQuery} from "gatsby";
 import sr, {srConfig} from "../../config/utils/scrollReveal";
 import {navLinks} from "../../config/constants";
-import {OutboundLink} from "gatsby-plugin-google-gtag";
+
+interface AboutMeQueryInterface {
+    allContentfulProjectTags: {
+        nodes: [{ name: string; }]
+    },
+    allContentfulAboutMe: {
+        nodes: [{
+            aboutMeText: { raw: string };
+        }]
+    }
+}
+
+interface TypesParsedTextData {
+    content: [{
+        content: [{
+            value: string
+        }]
+    }]
+}
 
 const About: React.FC = () => {
-    const {allContentfulProjectTags: {nodes: data}} = useStaticQuery(tagsQuery)
+    const data: AboutMeQueryInterface = useStaticQuery(AboutMeQuery)
+    const {allContentfulProjectTags: {nodes: tags}, allContentfulAboutMe: {nodes: aboutMeNodes}} = data;
+    const {aboutMeText: {raw}} = aboutMeNodes[0];
+    const parsedText: TypesParsedTextData = JSON.parse(raw)
     const revealSection = useRef(null);
 
     useEffect(() => {
@@ -19,7 +40,7 @@ const About: React.FC = () => {
             <h1 className="section-heading">about me</h1>
             <div className="about-content">
                 <div>
-                    <p>Hello! My name is Sanchit and I enjoy creating things that live on the internet. My interest in
+                    {/*<p>Hello! My name is Sanchit and I enjoy creating things that live on the internet. My interest in
                         web development started back in 2016 when I tried building College Projects</p>
                     <p>
                         Fast-forward to today, and I've had the privilege of working at&nbsp;
@@ -29,10 +50,11 @@ const About: React.FC = () => {
                         at&nbsp;<OutboundLink target="_blank" href="https://www.tcs.com/">Tata Consultancy
                         Services</OutboundLink>.
                     </p>
-                    <p>Here are a few technologies I've been working with recently:</p>
+                    <p>Here are a few technologies I've been working with recently:</p>*/}
+                    <div dangerouslySetInnerHTML={{__html: parsedText.content[0].content[0].value}}/>
                     <ul className="skill-list">
                         {
-                            data.map((tag: { name: string }, index: number) => (
+                            tags.map((tag: { name: string }, index: number) => (
                                 <li key={index}>{tag.name}</li>
                             ))
                         }
@@ -54,7 +76,7 @@ const About: React.FC = () => {
     );
 };
 
-const tagsQuery = graphql`
+const AboutMeQuery = graphql`
     {
         allContentfulProjectTags(
             sort: {fields: name, order: ASC}
@@ -62,6 +84,13 @@ const tagsQuery = graphql`
         ) {
             nodes {
                 name
+            }
+        }
+        allContentfulAboutMe {
+            nodes {
+                aboutMeText {
+                    raw
+                }
             }
         }
     }
