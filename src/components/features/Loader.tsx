@@ -12,7 +12,7 @@ const Loader: React.FC<LoaderProps> = ({finishLoading}) => {
 
     useEffect(() => {
         const timeout = setTimeout(() => setIsMounted(true), 10);
-        const loaderAnimationTimeOut = setTimeout(() => finishLoading(), 3000)
+        const loaderAnimationTimeOut = setTimeout(() => finishLoading(), 1500)
         return () => {
             clearTimeout(timeout)
             clearTimeout(loaderAnimationTimeOut)
