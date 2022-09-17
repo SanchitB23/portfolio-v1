@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Link} from "gatsby";
+import {graphql, Link, useStaticQuery} from "gatsby";
 import IconLogo from "../../icons/Logo";
 import {navLinks} from "../../../config/constants";
 import {LayoutProps} from "../Interface";
@@ -10,10 +10,22 @@ import styled, {css} from "styled-components";
 import Hamburger from "./hamburger";
 import {OutboundLink} from "gatsby-plugin-google-gtag";
 
+interface ResumeURLInterfaceObj {
+    allContentfulAsset: {
+        nodes: [{
+            file: {
+                url: string
+            }
+        }]
+    }
+}
+
 const NavBar: React.FC<LayoutProps> = ({isHome}) => {
     const [isMounted, setIsMounted] = useState(false)
     const [scrolledToTop, setScrolledToTop] = useState(true);
-
+    const data: ResumeURLInterfaceObj = useStaticQuery(query)
+    const {allContentfulAsset: {nodes}} = data;
+    const  {file: {url}} = nodes[0];
     // @ts-ignore
     const scrollDirection: string = useScrollDirection('down');
 
@@ -50,7 +62,7 @@ const NavBar: React.FC<LayoutProps> = ({isHome}) => {
     );
 
     const ResumeLink = (
-        <OutboundLink className="btn" href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+        <OutboundLink className="btn" href={url} target="_blank" rel="noopener noreferrer">
             Resume
         </OutboundLink>
     );
@@ -126,5 +138,18 @@ const StyledHeader = styled.header<{ scrollDirection: string, scrolledToTop: boo
             `};
   }
 `
+
+export const query = graphql`
+    {
+        allContentfulAsset(filter: {title: {eq: "ResumeFile"}}) {
+            nodes {
+                file {
+                    url
+                }
+            }
+        }
+    }
+`
+
 
 export default NavBar;
