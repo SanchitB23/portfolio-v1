@@ -24,10 +24,11 @@ const About: React.FC = () => {
                     <p>
                         Fast-forward to today, and I've had the privilege of working at&nbsp;
                         <OutboundLink target="_blank" href="https://cherishx.com/">a start-up</OutboundLink>, and&nbsp;
-                        <OutboundLink target="_blank" href="https://newgensoft.com/">a huge corporation</OutboundLink>.
-                        My main focus these days is building ReactJS Based Universal Payments portal for Tata Companies
-                        at&nbsp;<OutboundLink target="_blank" href="https://www.tcs.com/">Tata Consultancy
-                        Services</OutboundLink>.
+                        <OutboundLink target="_blank" href="https://www.tcs.com//">a huge corporation</OutboundLink>.
+                        My main focus these days is advanced Data and Business Marketing Analytics portal for brands
+                        like KFC, Taco Bell, Pizza Hut at
+                        &nbsp;<OutboundLink target="_blank" href="https://www.yum.com/wps/portal/yumbrands/Yumbrands">Yum
+                        Brands</OutboundLink>.
                     </p>
                     <p>Here are a few technologies I've been working with recently:</p>
                     <ul className="skill-list">
